@@ -1,0 +1,77 @@
+
+[
+    {
+        "_id": "001",
+        "tour_type": "Adventure",
+        "trip_title": "Mountain Hiking Expedition",
+        "price": 1200,
+        "primary_image": "https://i.ibb.co/w0JBpPH/fotor-ai-20240831172154.jpg",
+        "secondary_images": [
+            "https://example.com/images/mountain_hiking_2.jpg",
+            "https://example.com/images/mountain_hiking_3.jpg",
+            "https://example.com/images/mountain_hiking_4.jpg"
+        ]
+    },
+    {
+        "_id": "002",
+        "tour_type": "Cultural",
+        "trip_title": "Historical Tour of Ancient Rome",
+        "price": 900,
+        "primary_image": "https://i.ibb.co/m5HySFV/fotor-ai-20240831172245.jpg",
+        "secondary_images": [
+            "https://example.com/images/ancient_rome_2.jpg",
+            "https://example.com/images/ancient_rome_3.jpg",
+            "https://example.com/images/ancient_rome_4.jpg"
+        ]
+    },
+    {
+        "_id": "003",
+        "tour_type": "Relaxation",
+        "trip_title": "Luxury Spa Retreat in Bali",
+        "price": 1500,
+        "primary_image": "https://i.ibb.co/JvqJF8w/fotor-ai-20240831172539.jpg",
+        "secondary_images": [
+            "https://example.com/images/bali_spa_2.jpg",
+            "https://example.com/images/bali_spa_3.jpg",
+            "https://example.com/images/bali_spa_4.jpg"
+        ]
+    },
+    {
+        "_id": "004",
+        "tour_type": "Wildlife",
+        "trip_title": "African Safari Adventure",
+        "price": 2500,
+        "primary_image": "https://i.ibb.co/SQJ522M/fotor-ai-20240831172610.jpg",
+        "secondary_images": [
+            "https://example.com/images/african_safari_2.jpg",
+            "https://example.com/images/african_safari_3.jpg",
+            "https://example.com/images/african_safari_4.jpg"
+        ]
+    },
+    {
+        "_id": "005",
+        "tour_type": "Cruise",
+        "trip_title": "Mediterranean Cruise Experience",
+        "price": 3000,
+        "primary_image": "https://i.ibb.co/Ms9hf0d/fotor-ai-20240831172652.jpg",
+        "secondary_images": [
+            "https://example.com/images/mediterranean_cruise_2.jpg",
+            "https://example.com/images/mediterranean_cruise_3.jpg",
+            "https://example.com/images/mediterranean_cruise_4.jpg"
+        ]
+    },
+    {
+        "_id": "006",
+        "tour_type": "Eco-Tourism",
+        "trip_title": "Amazon Rainforest Expedition",
+        "price": 1800,
+        "primary_image": "https://i.ibb.co/d6mqnFN/fotor-ai-20240831172724.jpg",
+        "secondary_images": [
+            "https://example.com/images/amazon_expedition_2.jpg",
+            "https://example.com/images/amazon_expedition_3.jpg",
+            "https://example.com/images/amazon_expedition_4.jpg"
+        ]
+    }
+]
+
+

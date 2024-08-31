@@ -8,7 +8,7 @@ import {
 
 
 createRoot(document.getElementById('root')).render(
-  <div className='bg-[#aba98c] lg:w-[1330px]  md:w-full w-full mx-auto'>
+  <div className='bg-teal-500 lg:w-[1330px]  md:w-full w-full mx-auto'>
     <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,

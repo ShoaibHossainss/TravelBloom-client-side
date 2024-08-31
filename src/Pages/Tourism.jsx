@@ -1,5 +1,6 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import PackageCard from './Packages/PackageCard';
 
 const Tourism = () => {
     return (
@@ -12,10 +13,10 @@ const Tourism = () => {
     </TabList>
 
     <TabPanel>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/nHOAkgEB5c0?si=5qFBrYOoUs_ktrkv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/nHOAkgEB5c0?si=5qFBrYOoUs_ktrkv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+      <PackageCard></PackageCard>
     </TabPanel>
     <TabPanel>
       <h2>Any content 3</h2>
