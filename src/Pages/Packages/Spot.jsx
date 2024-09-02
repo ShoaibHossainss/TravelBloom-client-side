@@ -11,9 +11,7 @@ const Spot = ({spot}) => {
             alt="Shoes"/>
           </figure>
           <FaRegHeart className='btn w-[50px] top-0 -right-0 absolute bg-red-700 border-none'></FaRegHeart>
-          {/* <button className='btn w-[50px] top-0 -right-0 absolute bg-red-700 border-none' >
-          
-          </button> */}
+         
           
         <div className="card-body">
         <h2 className="card-title">Type: {tour_type}</h2>
