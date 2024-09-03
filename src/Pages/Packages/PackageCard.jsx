@@ -18,7 +18,7 @@ const PackageCard = () => {
             </h3>
         <div className="mx-auto ml-8 grid grid-cols-3 gap-6 ">
         {
-            spots.map(spot=><Spot key={spot._id} spot={spot}></Spot>)
+            spots.map(spot=><Spot key={spot.id} spot={spot}></Spot>)
         }
         </div>
       

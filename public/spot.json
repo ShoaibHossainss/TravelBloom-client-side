@@ -1,31 +1,53 @@
 
 [
     {
-        "_id": "001",
+        "id": 1,
         "tour_type": "Adventure",
         "trip_title": "Mountain Hiking Expedition",
         "price": 1200,
         "primary_image": "https://i.ibb.co/w0JBpPH/fotor-ai-20240831172154.jpg",
         "secondary_images": [
-            "https://example.com/images/mountain_hiking_2.jpg",
-            "https://example.com/images/mountain_hiking_3.jpg",
-            "https://example.com/images/mountain_hiking_4.jpg"
+            "https://i.ibb.co/1rgmCSN/Firefly-adventure-places-37569.jpg",
+            "https://i.ibb.co/5rdrhvR/Firefly-adventurous-places-amazing-magnificent-mountains-landscape-with-sky-and-clouds-37569.jpg",
+            "https://i.ibb.co/vJXt0kq/Firefly-adventure-37569.jpg",
+            "https://i.ibb.co/QcDy1XB/Firefly-adventure-39140.jpg",
+            "https://i.ibb.co/gMW92x3/Firefly-adventure-tour-in-Mountain-Biking-85470.jpg",
+            "https://i.ibb.co/kVThTYZ/Firefly-adventure-tour-in-Trekking-Hiking-37298.jpg"
+        ],
+        "about": [
+            "Trekking & Hiking: Explore scenic landscapes, from mountains to forests. Popular destinations include the Himalayas, the Andes, and the Appalachian Trail.",
+            "Rock Climbing: For those seeking a vertical challenge, rock climbing offers a physically demanding and mentally engaging experience. Iconic climbing destinations include El Capitan in Yosemite, the Dolomites in Italy, and Mount Arapiles in Australia.",
+            "Mountaineering: This involves climbing high-altitude peaks, often requiring technical skills, proper equipment, and acclimatization. Famous peaks include Mount Everest, Mount Kilimanjaro, and Mont Blanc.",
+            "Mountain Biking: Explore rugged terrains on two wheels, with trails varying from moderate to extreme. Popular destinations include the Colorado Rockies, the Alps, and the Andes."
+        ],
+        "tour_plan_day_1": ["Day 1: Arrival in Zermatt & Gornergrat Hike",
+        "Your adventure begins with a scenic train journey to the picturesque mountain village of Zermatt, nestled at the foot of the iconic Matterhorn. Upon arrival, check into your cozy hotel or mountain lodge and take a moment to soak in the alpine atmosphere. In the afternoon, embark on a hike up to Gornergrat, a ridge offering breathtaking panoramic views of the Matterhorn, Monte Rosa, and the surrounding glaciers. The trail is well-marked and offers a moderately challenging ascent, perfect for acclimatizing to the altitude. After reaching Gornergrat, you’ll descend back to Zermatt via the famous cogwheel train, which provides a relaxing and scenic ride down the mountain. The evening is yours to explore the charming, car-free village of Zermatt, where you can browse local shops, sample Swiss delicacies, and enjoy a hearty dinner at a traditional restaurant."],
+        "tour_plan_day_2":[
+            "Day 2: Glacier Trekking on the Theodul Glacier",
+            "On your second day, after an early breakfast, you’ll take the cable car up to the Klein Matterhorn, one of the highest accessible points in Europe. Here, you’ll embark on a thrilling guided trek across the Theodul Glacier. This unique experience allows you to walk on a vast expanse of ice, surrounded by towering peaks and endless blue skies. The trek is moderate in difficulty, making it accessible for those with a reasonable fitness level. Following your glacier trek, you’ll participate in a mountaineering workshop where experienced guides will teach you the basics of using crampons and an ice axe, as well as the fundamentals of roped glacier travel. This introduction to mountaineering is both educational and exhilarating, providing a taste of high-altitude adventure. After a day filled with glacier exploration, you’ll return to Zermatt in the late afternoon, where you can unwind in the serene mountain setting, perhaps indulging in a spa session or simply enjoying the fresh alpine air."
+        ],
+        "tour_plan_day_3":[
+            "Day 3: Breithorn Ascent (4,164m)",
+            "Your final day starts early with an exciting ascent of Breithorn, one of the most accessible 4,000-meter peaks in the Alps. This climb is guided and suitable for those with a good fitness level and a sense of adventure. The ascent typically takes about 4-5 hours, during which you’ll use the skills learned in the previous day’s mountaineering workshop. As you reach the summit, you’ll be rewarded with stunning panoramic views of the surrounding peaks and glaciers—a true highlight of your mountain adventure. After savoring your time at the top and capturing some unforgettable photos, you’ll begin your descent back to the cable car station and return to Zermatt. In the afternoon, you’ll have some time for a leisurely lunch and a last stroll through the village before catching the train back to Zurich or Geneva for your departure, concluding your three-day alpine adventure on a high note."
         ]
     },
     {
-        "_id": "002",
+        "id": 2,
         "tour_type": "Cultural",
         "trip_title": "Historical Tour of Ancient Rome",
         "price": 900,
         "primary_image": "https://i.ibb.co/m5HySFV/fotor-ai-20240831172245.jpg",
         "secondary_images": [
-            "https://example.com/images/ancient_rome_2.jpg",
-            "https://example.com/images/ancient_rome_3.jpg",
-            "https://example.com/images/ancient_rome_4.jpg"
+            "https://i.ibb.co/P5tLKRx/Firefly-Historical-Tour-of-Ancient-Rome-19355.jpg",
+            "https://i.ibb.co/vPD9Ckh/Firefly-Historical-Tour-of-Ancient-Rome-45790.jpg",
+            "https://i.ibb.co/KxLwrPn/Firefly-Historical-Tour-of-Ancient-Rome-85470.jpg",
+            "https://i.ibb.co/YNMtXB0/Firefly-Historical-Tour-of-Ancient-Rome-37298.jpg",
+            "https://i.ibb.co/h14vyBt/Firefly-Historical-Tour-of-Rome-45790.jpg",
+            "https://i.ibb.co/Z1rPTzt/Firefly-Historical-Tour-of-Ancient-Rome-59097.jpg"
         ]
     },
     {
-        "_id": "003",
+        "id": 3,
         "tour_type": "Relaxation",
         "trip_title": "Luxury Spa Retreat in Bali",
         "price": 1500,
@@ -37,7 +59,7 @@
         ]
     },
     {
-        "_id": "004",
+        "id": 4,
         "tour_type": "Wildlife",
         "trip_title": "African Safari Adventure",
         "price": 2500,
@@ -49,7 +71,7 @@
         ]
     },
     {
-        "_id": "005",
+        "id": 5,
         "tour_type": "Cruise",
         "trip_title": "Mediterranean Cruise Experience",
         "price": 3000,
@@ -61,7 +83,7 @@
         ]
     },
     {
-        "_id": "006",
+        "id": 6,
         "tour_type": "Eco-Tourism",
         "trip_title": "Amazon Rainforest Expedition",
         "price": 1800,

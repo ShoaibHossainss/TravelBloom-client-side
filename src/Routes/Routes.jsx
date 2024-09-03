@@ -9,6 +9,7 @@ import Cultural from "../Pages/Packages/Cultural";
 import Relaxation from "../Pages/Packages/Relaxation";
 import Cruise from "../Pages/Packages/Cruise";
 import Wildlife from "../Pages/Packages/Wildlife";
+import PackageDetails from "../Pages/PackageDetails/PackageDetails";
 
   const router = createBrowserRouter([
     {
@@ -18,6 +19,11 @@ import Wildlife from "../Pages/Packages/Wildlife";
         {
             path: '/',
             element: <Home></Home>,
+        },
+        {
+                path: '/package-details/:id',
+                element: <PackageDetails></PackageDetails>,
+                loader: () => fetch('/spot.json')
         },
         {
             path: '/adventure',
