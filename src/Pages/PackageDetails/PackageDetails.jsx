@@ -1,5 +1,5 @@
 
-import { useLoaderData, useParams,} from "react-router-dom";
+import { Link, useLoaderData, useParams,} from "react-router-dom";
 
 
 const PackageDetails = () => {
@@ -56,7 +56,9 @@ const PackageDetails = () => {
 </div>
 
        </div>
-      
+       <Link to='/'>
+      <button className="btn btn-primary">Go Back</button>
+      </Link>
       </div>
     );
 };
