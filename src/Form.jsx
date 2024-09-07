@@ -111,7 +111,7 @@ const Form = () => {
   <div className="label">
   <span className="label-text">Day-1 title</span>
   </div>
-  <input {...register("day_1_title",{required: true})} type="number" placeholder="Enter Your Day-1 Title" className="input input-bordered w-full" />
+  <input {...register("day_1_title",{required: true})} type="text" placeholder="Enter Your Day-1 Title" className="input input-bordered w-full" />
   </label>
   </div>
   <label className="form-control mb-2">
@@ -125,7 +125,7 @@ const Form = () => {
   <div className="label">
   <span className="label-text">Day-2 title</span>
   </div>
-  <input {...register("day_2_title",{required: true})} type="number" placeholder="Enter Your Day-2 Title" className="input input-bordered w-full" />
+  <input {...register("day_2_title",{required: true})} type="text" placeholder="Enter Your Day-2 Title" className="input input-bordered w-full" />
   </label>
   </div>
   <label className="form-control mb-2">
@@ -139,7 +139,7 @@ const Form = () => {
   <div className="label">
   <span className="label-text">Day-3 title</span>
   </div>
-  <input {...register("day_3_title",{required: true})} type="number" placeholder="Enter Your Day-3 Title" className="input input-bordered w-full" />
+  <input {...register("day_3_title",{required: true})} type="text" placeholder="Enter Your Day-3 Title" className="input input-bordered w-full" />
   </label>
   </div>
   <label className="form-control mb-2">

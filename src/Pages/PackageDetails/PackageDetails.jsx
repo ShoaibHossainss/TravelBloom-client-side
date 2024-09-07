@@ -30,10 +30,7 @@ const PackageDetails = () => {
       </div>
       <div className="text-center mt-6">
        <h2 className="text-4xl mb-4">About this tour</h2>
-       <p className="p-2 text-lg">1: {spot.about[0]}</p>
-       <p className="p-2 text-lg">2: {spot.about[1]}</p>
-       <p className="p-2 text-lg">3: {spot.about[2]}</p>
-       <p className="p-2 text-lg">4: {spot.about[3]}</p>
+       <p className="p-2 text-lg">{spot.about}</p>
       </div>
 
       <div>
