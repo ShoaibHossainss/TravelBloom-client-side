@@ -23,7 +23,7 @@ import PackageDetails from "../Pages/PackageDetails/PackageDetails";
         {
                 path: '/package-details/:id',
                 element: <PackageDetails></PackageDetails>,
-                loader: () => fetch('/spot.json')
+                loader: () => fetch('http://localhost:5000/touristSpot')
         },
         {
             path: '/adventure',

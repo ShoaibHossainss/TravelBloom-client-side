@@ -14,7 +14,7 @@ const Cultural = () => {
         })
     },[])
     return (
-        <div>
+        <div className="flex gap-4">
         {
             items.map(p=>
                 <div key={p._id} className="card bg-base-100 w-96 shadow-xl">

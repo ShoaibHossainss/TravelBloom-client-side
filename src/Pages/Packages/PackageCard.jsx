@@ -6,7 +6,7 @@ import Spot from "./Spot";
 const PackageCard = () => {
     const [spots,setSpots] = useState([]);
     useEffect(()=>{
-        fetch('/spot.json')
+        fetch('http://localhost:5000/touristSpot')
         .then(res=>res.json())
         .then(data=>setSpots(data))
     },[])
