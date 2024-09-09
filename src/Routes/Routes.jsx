@@ -10,6 +10,9 @@ import Relaxation from "../Pages/Packages/Relaxation";
 import Cruise from "../Pages/Packages/Cruise";
 import Wildlife from "../Pages/Packages/Wildlife";
 import PackageDetails from "../Pages/PackageDetails/PackageDetails";
+import Register from "../Register/Register";
+import Login from "../Pages/Login/Login";
+
 
   const router = createBrowserRouter([
     {
@@ -24,6 +27,14 @@ import PackageDetails from "../Pages/PackageDetails/PackageDetails";
                 path: '/package-details/:id',
                 element: <PackageDetails></PackageDetails>,
                 loader: () => fetch('http://localhost:5000/touristSpot')
+        },
+        {
+            path: '/login',
+            element: <Login></Login>
+        },
+        {
+            path: '/register',
+            element: <Register></Register>
         },
         {
             path: '/adventure',
