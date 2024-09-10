@@ -15,14 +15,25 @@ const Register = () => {
     const onSubmit = async (data) => {
       try {
         console.log(data);
-        createUser(data.email, data.password);
-        updateUser(data.name, data.photoURL);
+        
+
+        const result = await createUser(data.email, data.password);
+        const loggedUser = result.user;
+        console.log(loggedUser);
+    
+
+        await updateUser(data.name, data.photoURL);
+    
+       
         const userInfo = {
           name: data.name,
           email: data.email,
           photoURL: data.photoURL,
         };
-        const res = await axiosPublic.post('/users', userInfo);  
+    
+ 
+        const res = await axiosPublic.post('/users', userInfo); 
+        
         if (res.data.insertedId) {
           console.log('User added');
           Swal.fire({

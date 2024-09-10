@@ -12,6 +12,9 @@ import Wildlife from "../Pages/Packages/Wildlife";
 import PackageDetails from "../Pages/PackageDetails/PackageDetails";
 import Register from "../Register/Register";
 import Login from "../Pages/Login/Login";
+import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Dashboard/Dashboard";
+import AddPackage from "../Dashboard/AddPackage";
 
 
   const router = createBrowserRouter([
@@ -62,5 +65,23 @@ import Login from "../Pages/Login/Login";
         },
     ]
     },
+    {
+        path: "dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+            {
+                path: 'myProfile',
+                element: ,
+               },
+               {
+                path: 'addPackage',
+                element: <AddPackage></AddPackage>
+               },
+               {
+                path: 'manageItems',
+                element: <Cart></Cart>
+               },
+        ]
+    }
   ]);
   export default router
