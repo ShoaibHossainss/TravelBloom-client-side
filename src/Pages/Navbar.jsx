@@ -1,17 +1,25 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import useAdmin from "../hooks/useAdmin";
+import useTourist from "../hooks/useTourist";
+
+
 
 
 
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext)
+const [isAdmin] = useAdmin()
+  const [isTourist] = useTourist()
   const links = <>
              <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-green-500'} to='/'>Home</NavLink></li>
              <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-green-500'} to='/assignments'>Community</NavLink></li>
              <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-green-500'} to='/assignments'>Blogs</NavLink></li>
              <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-green-500'} to='/assignments'>About Us</NavLink></li>
              <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-green-500'} to='/assignments'>Contact Us</NavLink></li>
+            
+
             
              { user?.email ?  <>
         </> 
@@ -75,7 +83,20 @@ user ? <>
 
  <li className="uppercase text-green-500">{user?.displayName}</li>
  <li className="uppercase text-green-500">{user?.email}</li>
- <li className="text-green-500 rounded-lg mx-auto"><Link to="/my-assignment">Dashboard</Link></li>
+ {/* <li className="text-green-500 rounded-lg mx-auto"><Link to="/dashboard">Dashboard</Link></li> */}
+ {
+       user && isAdmin && <li><Link to='/dashboard/adminHome'>Dashboard</Link></li>
+    }
+             {
+       user && isTourist && <li><Link to='/dashboard/touristHome'>Dashboard</Link></li>
+    }
+   {
+  user && !isAdmin && !isTourist && (
+    <li><Link to='/dashboard/userHome'>Dashboard</Link></li>
+  )
+}
+     
+
  <li className="text-green-500 rounded-lg mx-auto"><Link to="/my-assignment">Offer Announcement</Link></li>
  {/* <li className="bg-[#f8f3f0] text-green-500 lg:ml-10 font-sans lg:font-semibold lg:text-lg  rounded-lg"><Link to="/my-assignment">Dashboard</Link></li> */}
  {/* <li className="bg-[#f8f3f0] text-green-500 lg:ml-10 font-sans lg:font-semibold lg:text-lg  rounded-lg"><Link to="/my-assignment">Offer Announcement</Link></li> */}

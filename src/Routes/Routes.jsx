@@ -15,6 +15,8 @@ import Login from "../Pages/Login/Login";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Dashboard/Dashboard";
 import AddPackage from "../Dashboard/AddPackage";
+import MyProfile from "../Dashboard/MyProfile";
+import ManageItems from "../Dashboard/ManageItems";
 
 
   const router = createBrowserRouter([
@@ -69,9 +71,36 @@ import AddPackage from "../Dashboard/AddPackage";
         path: "dashboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
+            // {tourist}
             {
                 path: 'myProfile',
-                element: ,
+                element: <MyProfile></MyProfile>
+               },
+               {
+                path: 'myBookings',
+                element: <AddPackage></AddPackage>
+               },
+               {
+                path: 'myWishlist',
+                element: <AddPackage></AddPackage>
+               },
+               {
+                path: 'requestToAdmin',
+                element: <AddPackage></AddPackage>
+               },
+            //    {tour guide}
+               {
+                path: 'myProfile',
+                element: <MyProfile></MyProfile>
+               },
+               {
+               path: 'myAssignedTour',
+               element: <MyProfile></MyProfile>
+               },
+            // {admin}
+            {
+                path: 'myProfile',
+                element: <MyProfile></MyProfile>
                },
                {
                 path: 'addPackage',
@@ -79,7 +108,7 @@ import AddPackage from "../Dashboard/AddPackage";
                },
                {
                 path: 'manageItems',
-                element: <Cart></Cart>
+                element: <ManageItems></ManageItems>
                },
         ]
     }
