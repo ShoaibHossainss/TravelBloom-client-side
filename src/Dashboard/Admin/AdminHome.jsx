@@ -1,4 +1,5 @@
-import useAuth from "../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
+
 
 
 
@@ -9,6 +10,7 @@ const AdminHome = () => {
             {
                 user?.displayName ? user.displayName : 'Back'
             }
+            <h3>Lovely</h3>
         </div>
     );
 };

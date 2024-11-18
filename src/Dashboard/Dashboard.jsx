@@ -50,14 +50,14 @@
 import { FaHome, FaList, FaUtensilSpoon } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
-import useTourist from "../hooks/useTourist";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import useTourGuide from "../hooks/useTourGuide";
 // import useUser from "../hooks/useUser";
 
 const Dashboard = () => {
     const isAdmin = useAdmin();
-    const isTourist = useTourist();
+    const isTourGuide = useTourGuide()
     const {user} = useContext(AuthContext)
     // const user = useUser(); // Assuming useUser handles the general user case
 
@@ -75,7 +75,7 @@ const Dashboard = () => {
                                 <li><NavLink to='/dashboard/manageUsers'>
                                     <FaList /> Manage Users</NavLink></li>
                             </>
-                        ) : isTourist ? (
+                        ) : isTourGuide ? (
                             <>
                                 <li><NavLink to='/dashboard/touristProfile'>
                                     <FaHome /> Tourist Profile</NavLink></li>

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
-import useTourist from "../hooks/useTourist";
+import useTourGuide from "../hooks/useTourGuide";
 
 
 
@@ -11,7 +11,7 @@ import useTourist from "../hooks/useTourist";
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext)
 const [isAdmin] = useAdmin()
-  const [isTourist] = useTourist()
+  const [isTourGuide] = useTourGuide()
   const links = <>
              <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-green-500'} to='/'>Home</NavLink></li>
              <li><NavLink className={({isActive})=>isActive ? ' bg-black text-[#ffcd00] rounded-md font-sans text-lg' : ' font-sans text-lg text-green-500'} to='/assignments'>Community</NavLink></li>
@@ -88,11 +88,11 @@ user ? <>
        user && isAdmin && <li><Link to='/dashboard/adminHome'>Dashboard</Link></li>
     }
              {
-       user && isTourist && <li><Link to='/dashboard/touristHome'>Dashboard</Link></li>
+       user && isTourGuide && <li><Link to='/dashboard/touristHome'>Dashboard</Link></li>
     }
    {
-  user && !isAdmin && !isTourist && (
-    <li><Link to='/dashboard/userHome'>Dashboard</Link></li>
+  user && !isAdmin && !isTourGuide && (
+    <li><Link to='/dashboard/userProfile'>Dashboard</Link></li>
   )
 }
      

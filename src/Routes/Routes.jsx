@@ -17,6 +17,10 @@ import Dashboard from "../Dashboard/Dashboard";
 import AddPackage from "../Dashboard/AddPackage";
 import MyProfile from "../Dashboard/MyProfile";
 import ManageItems from "../Dashboard/ManageItems";
+import MyBooking from "../Dashboard/MyBooking";
+import AdminHome from "../Dashboard/Admin/AdminHome";
+import ManageUser from "../Dashboard/Admin/ManageUser";
+
 
 
   const router = createBrowserRouter([
@@ -71,6 +75,14 @@ import ManageItems from "../Dashboard/ManageItems";
         path: "dashboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
+            {
+                path: 'userProfile',
+                element: <MyProfile></MyProfile>
+            },
+            {
+                path: 'myBookings',
+                element: <MyBooking></MyBooking>
+            },
             // {tourist}
             {
                 path: 'myProfile',
@@ -99,8 +111,12 @@ import ManageItems from "../Dashboard/ManageItems";
                },
             // {admin}
             {
-                path: 'myProfile',
-                element: <MyProfile></MyProfile>
+                path: 'adminHome',
+                element: <AdminHome></AdminHome>
+               },
+            {
+                path: 'manageUsers',
+                element: <ManageUser></ManageUser>
                },
                {
                 path: 'addPackage',
