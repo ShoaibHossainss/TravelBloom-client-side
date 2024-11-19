@@ -50,49 +50,72 @@
 import { FaHome, FaList, FaUtensilSpoon } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from "../hooks/useAdmin";
-import { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
+
 import useTourGuide from "../hooks/useTourGuide";
+import useAuth from "../hooks/useAuth";
+
 // import useUser from "../hooks/useUser";
 
 const Dashboard = () => {
-    const isAdmin = useAdmin();
-    const isTourGuide = useTourGuide()
-    const {user} = useContext(AuthContext)
+    // const isAdmin = useAdmin();
+    // const isTourGuide = useTourGuide()
+    // const {user} = useAuth()
     // const user = useUser(); // Assuming useUser handles the general user case
+    
+    const [isAdmin, isAdminLoading] = useAdmin();  // Returns [boolean, loadingStatus]
+    const [isTourGuide, isTourGuideLoading] = useTourGuide();  // Returns [boolean, loadingStatus]
+    const { user, loading: userLoading } = useAuth();  // useAuth provides user and loading status
 
+    // Show loading state until all hooks have loaded
+    if (isAdminLoading || isTourGuideLoading || userLoading) {
+        return <div>Loading...</div>;
+    }
     return (
         <div className="flex">
             <div className="w-65 min-h-full bg-orange-500">
                 <ul className="menu p-4">
-                    {
-                        isAdmin ? (
-                            <>
-                                <li><NavLink to='/dashboard/adminProfile'>
-                                    <FaHome /> Admin Profile</NavLink></li>
-                                <li><NavLink to='/dashboard/addPackage'>
-                                    <FaUtensilSpoon /> Add Package</NavLink></li>
-                                <li><NavLink to='/dashboard/manageUsers'>
-                                    <FaList /> Manage Users</NavLink></li>
-                            </>
-                        ) : isTourGuide ? (
-                            <>
-                                <li><NavLink to='/dashboard/touristProfile'>
-                                    <FaHome /> Tourist Profile</NavLink></li>
-                                <li><NavLink to='/dashboard/bookedPackages'>
-                                    <FaUtensilSpoon /> My Booked Packages</NavLink></li>
-                            </>
-                        ) : user ? (
-                            <>
-                                <li><NavLink to='/dashboard/userProfile'>
-                                    <FaHome />My Profile</NavLink></li>
-                                <li><NavLink to='/dashboard/myBookings'>
-                                    <FaUtensilSpoon /> My Bookings</NavLink></li>
-                            </>
-                        ) : (
-                            <p>No role found</p>
-                        )
+                    {isAdmin ? 
+                        <>
+                            <li><NavLink to='/dashboard/adminProfile'>
+                                <FaHome /> Admin Profile
+                            </NavLink></li>
+                            <li><NavLink to='/dashboard/addPackage'>
+                                <FaUtensilSpoon /> Add Package
+                            </NavLink></li>
+                            <li><NavLink to='/dashboard/manageUsers'>
+                                <FaList /> Manage Users
+                            </NavLink></li>
+                        </>
+                     : isTourGuide ? 
+                        <>
+                            <li><NavLink to='/dashboard/tourGuideProfile'>
+                                <FaHome /> Tour Guide Profile
+                            </NavLink></li>
+                            <li><NavLink to='/dashboard/myAssignedTour'>
+                                <FaUtensilSpoon /> My Assigned Tours
+                            </NavLink></li>
+                        </>
+                     : user ?
+                        <>
+                            <li><NavLink to='/dashboard/userProfile'>
+                                <FaHome /> My Profile
+                            </NavLink></li>
+                            <li><NavLink to='/dashboard/myBookings'>
+                                <FaUtensilSpoon /> My Bookings
+                            </NavLink></li>
+                            <li><NavLink to='/dashboard/myWishlist'>
+                                <FaUtensilSpoon /> My Wishlist
+                            </NavLink></li>
+                            <li><NavLink to='/dashboard/requestAdmin'>
+                                <FaUtensilSpoon /> Request to Admin
+                            </NavLink></li>
+                        </>
+                     : (
+                        <p>No role found</p>
+                    )
+                    
                     }
+
                 </ul>
             </div>
             <div className="flex-1 p-8">

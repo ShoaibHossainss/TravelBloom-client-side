@@ -16,10 +16,11 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Dashboard/Dashboard";
 import AddPackage from "../Dashboard/AddPackage";
 import MyProfile from "../Dashboard/MyProfile";
-import ManageItems from "../Dashboard/ManageItems";
-import MyBooking from "../Dashboard/MyBooking";
-import AdminHome from "../Dashboard/Admin/AdminHome";
 import ManageUser from "../Dashboard/Admin/ManageUser";
+import MyAssignedTour from "../Dashboard/TourGuide/MyAssignedTour";
+import RequestAdmin from "../Dashboard/Tourist/RequestAdmin";
+import MyWishlist from "../Dashboard/Tourist/MyWishlist";
+import MyBooking from "../Dashboard/Tourist/MyBooking";
 
 
 
@@ -82,29 +83,29 @@ import ManageUser from "../Dashboard/Admin/ManageUser";
                },
                {
                 path: 'myBookings',
-                element: <AddPackage></AddPackage>
+                element: <MyBooking></MyBooking>
                },
                {
                 path: 'myWishlist',
-                element: <AddPackage></AddPackage>
+                element: <MyWishlist></MyWishlist>
                },
                {
                 path: 'requestToAdmin',
-                element: <AddPackage></AddPackage>
+                element: <RequestAdmin></RequestAdmin>
                },
             //    {tour guide}
                {
-                path: 'myProfile',
+                path: 'tourGuideProfile',
                 element: <MyProfile></MyProfile>
                },
                {
                path: 'myAssignedTour',
-               element: <MyProfile></MyProfile>
+               element: <MyAssignedTour></MyAssignedTour>
                },
             // {admin}
             {
                 path: 'adminProfile',
-                element: <AdminHome></AdminHome>
+                element: <MyProfile></MyProfile>
                },
             {
                 path: 'manageUsers',

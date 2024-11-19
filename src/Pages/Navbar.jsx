@@ -85,10 +85,10 @@ user ? <>
  <li className="uppercase text-green-500">{user?.email}</li>
  {/* <li className="text-green-500 rounded-lg mx-auto"><Link to="/dashboard">Dashboard</Link></li> */}
  {
-       user && isAdmin && <li><Link to='/dashboard/adminHome'>Dashboard</Link></li>
+       user && isAdmin && <li><Link to='/dashboard/adminProfile'>Dashboard</Link></li>
     }
              {
-       user && isTourGuide && <li><Link to='/dashboard/touristHome'>Dashboard</Link></li>
+       user && isTourGuide && <li><Link to='/dashboard/tourGuideProfile'>Dashboard</Link></li>
     }
    {
   user && !isAdmin && !isTourGuide && (
