@@ -22,6 +22,7 @@ import RequestAdmin from "../Dashboard/Tourist/RequestAdmin";
 import MyWishlist from "../Dashboard/Tourist/MyWishlist";
 import MyBooking from "../Dashboard/Tourist/MyBooking";
 import AllPackage from "../Pages/Packages/AllPackage";
+import TourGuideDetails from "../TourGuide/TourGuideDetails";
 
 
 
@@ -43,6 +44,11 @@ import AllPackage from "../Pages/Packages/AllPackage";
                 path: '/package-details/:id',
                 element: <PackageDetails></PackageDetails>,
                 loader: () => fetch('http://localhost:5000/touristSpot')
+        },
+        {
+                path: '/tourGuide-details/:id',
+                element: <TourGuideDetails></TourGuideDetails>,
+                loader: () => fetch('http://localhost:5000/tourGuides')
         },
         {
             path: '/login',

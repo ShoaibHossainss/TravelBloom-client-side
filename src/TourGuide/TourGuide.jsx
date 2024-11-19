@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -32,11 +33,11 @@ const TourGuide = () => {
           <p>Position: {p.position}</p>
           <p>Company: {p.company}</p>
           <p>Years: {p.years}</p>
-         {/* <Link to={`/package-details/${_id}`}>
+         <Link to={`/tourGuide-details/${p._id}`}>
          <div className="card-actions justify-end">
-            <button className="btn btn-primary">View Package</button>
+            <button className="btn btn-primary">Details</button>
           </div>
-         </Link> */}
+         </Link>
         </div>
       </div>
             )
