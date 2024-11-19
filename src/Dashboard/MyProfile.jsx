@@ -1,15 +1,38 @@
-import { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
+import useAuth from "../hooks/useAuth";
+
+
 
 
 const MyProfile = () => {
-    const user = useContext(AuthContext)
-    return (
-        <div>
-            <h3>{user?.email}</h3>
-            <h3>Nice</h3>
-        </div>
-    );
+    const {user} = useAuth()
+   return(
+   <div>
+     <div className="avatar flex mx-auto items-center justify-center text-center">
+  <div className="w-24 rounded-full">
+    <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+  </div>
+</div>
+<form className="card-body">
+<div className="w-1/2 mx-auto items-center justify-center text-center">
+<label className="input input-bordered flex justify-center items-center text-center gap-2">
+{
+                user?.displayName
+            }
+
+</label>
+</div>
+<div className="w-1/2 mx-auto items-center justify-center text-center">
+<label className="input input-bordered flex justify-center items-center text-center gap-2">
+  {
+    user?.email
+  }
+
+</label>
+</div>
+</form>
+   </div>
+   )
+    
 };
 
 export default MyProfile;

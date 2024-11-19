@@ -85,7 +85,7 @@ const Dashboard = () => {
                         ) : user ? (
                             <>
                                 <li><NavLink to='/dashboard/userProfile'>
-                                    <FaHome /> My Profile</NavLink></li>
+                                    <FaHome />My Profile</NavLink></li>
                                 <li><NavLink to='/dashboard/myBookings'>
                                     <FaUtensilSpoon /> My Bookings</NavLink></li>
                             </>

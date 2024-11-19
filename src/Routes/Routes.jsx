@@ -75,17 +75,9 @@ import ManageUser from "../Dashboard/Admin/ManageUser";
         path: "dashboard",
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
-            {
-                path: 'userProfile',
-                element: <MyProfile></MyProfile>
-            },
-            {
-                path: 'myBookings',
-                element: <MyBooking></MyBooking>
-            },
             // {tourist}
             {
-                path: 'myProfile',
+                path: 'userProfile',
                 element: <MyProfile></MyProfile>
                },
                {
@@ -111,7 +103,7 @@ import ManageUser from "../Dashboard/Admin/ManageUser";
                },
             // {admin}
             {
-                path: 'adminHome',
+                path: 'adminProfile',
                 element: <AdminHome></AdminHome>
                },
             {
@@ -121,10 +113,6 @@ import ManageUser from "../Dashboard/Admin/ManageUser";
                {
                 path: 'addPackage',
                 element: <AddPackage></AddPackage>
-               },
-               {
-                path: 'manageItems',
-                element: <ManageItems></ManageItems>
                },
         ]
     }
