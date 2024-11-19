@@ -21,6 +21,7 @@ import MyAssignedTour from "../Dashboard/TourGuide/MyAssignedTour";
 import RequestAdmin from "../Dashboard/Tourist/RequestAdmin";
 import MyWishlist from "../Dashboard/Tourist/MyWishlist";
 import MyBooking from "../Dashboard/Tourist/MyBooking";
+import AllPackage from "../Pages/Packages/AllPackage";
 
 
 
@@ -32,6 +33,11 @@ import MyBooking from "../Dashboard/Tourist/MyBooking";
         {
             path: '/',
             element: <Home></Home>,
+        },
+        {
+                path: '/all-package',
+                element: <AllPackage></AllPackage>,
+                loader: () => fetch('http://localhost:5000/touristSpot')
         },
         {
                 path: '/package-details/:id',

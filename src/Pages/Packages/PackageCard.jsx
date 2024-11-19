@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Spot from "./Spot";
+import { Link } from "react-router-dom";
 
 
 
@@ -21,7 +22,11 @@ const PackageCard = () => {
             spots.map(spot=><Spot key={spot.id} spot={spot}></Spot>)
         }
         </div>
-      
+        <Link to={'/all-package'}>
+         <div className="card-actions justify-center">
+            <button className="btn btn-primary">All Package</button>
+          </div>
+         </Link>
     </div>
     );
 };
