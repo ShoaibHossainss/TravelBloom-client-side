@@ -76,6 +76,7 @@ import AllPackage from "../Pages/Packages/AllPackage";
             path: '/eco-tourism',
             element: <EcoTourism></EcoTourism>,
         },
+        
     ]
     },
     {
