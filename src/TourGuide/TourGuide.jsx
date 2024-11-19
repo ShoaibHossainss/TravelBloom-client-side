@@ -26,13 +26,7 @@ const TourGuide = () => {
           <p>Email: {p.email}</p>
           <p>Phone: {p.phone}</p>
           <p>Address: {p.address}</p>
-          <p>Education: {p.education}</p>
-          <p>Skills: {p.skills[0]}</p>
-          <p>Skills: {p.skills[1]}</p>
-          <p>Skills: {p.skills[2]}</p>
-          <p>Position: {p.position}</p>
-          <p>Company: {p.company}</p>
-          <p>Years: {p.years}</p>
+          
          <Link to={`/tourGuide-details/${p._id}`}>
          <div className="card-actions justify-end">
             <button className="btn btn-primary">Details</button>
