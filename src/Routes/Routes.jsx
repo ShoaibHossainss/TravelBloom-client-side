@@ -24,6 +24,7 @@ import MyBooking from "../Dashboard/Tourist/MyBooking";
 import AllPackage from "../Pages/Packages/AllPackage";
 import TourGuideDetails from "../TourGuide/TourGuideDetails";
 import TouristStoryDetails from "../../TouristStory/TouristStoryDetails";
+import AllTouristStory from "../../TouristStory/AllTouristStory";
 
 
 
@@ -40,6 +41,11 @@ import TouristStoryDetails from "../../TouristStory/TouristStoryDetails";
                 path: '/all-package',
                 element: <AllPackage></AllPackage>,
                 loader: () => fetch('http://localhost:5000/touristSpot')
+        },
+        {
+                path: '/all-touristStory',
+                element: <AllTouristStory></AllTouristStory>,
+                loader: () => fetch('http://localhost:5000/touristStory')
         },
         {
                 path: '/package-details/:id',

@@ -11,7 +11,8 @@ const TouristStory = () => {
     },[])
     console.log(touristStory)
     return (
-        <div className="mx-auto ml-8 grid grid-cols-3 gap-6">
+        <div>
+              <div className="mx-auto ml-8 grid grid-cols-3 gap-6">
         {
           touristStory.map(p=>
             <Link to={`/touristStory-details/${p._id}`} key={p._id}>
@@ -36,7 +37,15 @@ const TouristStory = () => {
           )
         }  
       </div>
+      <Link to={'/all-touristStory'}>
+      <div className="flex justify-center mx-auto mt-4">
+      <button className="btn btn-primary">All Story</button>
+      </div>
+           
+         </Link>
+        </div>
     );
 };
 
 export default TouristStory;
+
