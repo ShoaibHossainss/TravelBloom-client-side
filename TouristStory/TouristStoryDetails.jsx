@@ -61,7 +61,11 @@ const TouristStoryDetails = () => {
     </>
   ) : (
     <>
-     <p>Please <a href="/login">log in</a> to share this story.</p>
+     <p>Please <Link to={"/login"}>
+     <button className="btn">
+     Login
+     </button>
+     </Link> to share this story.</p>
     </>
   )
 }

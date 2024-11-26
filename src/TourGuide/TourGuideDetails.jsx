@@ -58,7 +58,11 @@ const TourGuideDetails = () => {
       {/* review section */}
       <div className="mx-auto justify-center items-center text-center mt-10">
       <h2 className="mb-2">Leave a Review</h2>
-      {!user && <p>Please log in to leave a review.</p>}
+      {!user && <p>Please <Link to={"/login"}>
+     <button className="btn">
+     Login
+     </button>
+     </Link> to leave a review.</p>}
       {
         user && <form onSubmit={handleSubmit} >
       <div className="rating">

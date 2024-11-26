@@ -25,6 +25,8 @@ import AllPackage from "../Pages/Packages/AllPackage";
 import TourGuideDetails from "../TourGuide/TourGuideDetails";
 import TouristStoryDetails from "../../TouristStory/TouristStoryDetails";
 import AllTouristStory from "../../TouristStory/AllTouristStory";
+import MyTourGuideProfile from "../Dashboard/TourGuide/MyTourGuideProfile";
+import AddNewTourGuide from "../TourGuide/AddNewTourGuide";
 
 
 
@@ -121,7 +123,11 @@ import AllTouristStory from "../../TouristStory/AllTouristStory";
             //    {tour guide}
                {
                 path: 'tourGuideProfile',
-                element: <MyProfile></MyProfile>
+                element: <MyTourGuideProfile></MyTourGuideProfile>
+               },
+               {
+                path: 'Add-New-TourGuide',
+                element: <AddNewTourGuide></AddNewTourGuide>
                },
                {
                path: 'myAssignedTour',

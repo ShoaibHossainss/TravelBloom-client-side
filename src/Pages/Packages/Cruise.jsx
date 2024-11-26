@@ -30,7 +30,9 @@ const Cruise = () => {
                 <p>Title: {p.trip_title}</p>
                 <p>Price: {p.price}</p>
                 <div className="card-actions flex gap-4">
+                  <Link to={`/package-details/${p._id}`}>
                   <button className="btn btn-primary">View Package</button>
+                  </Link>
                   <Link to='/'>
       <button className="btn btn-primary">Go Back</button>
       </Link>
