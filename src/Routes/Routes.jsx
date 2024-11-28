@@ -27,6 +27,7 @@ import TouristStoryDetails from "../../TouristStory/TouristStoryDetails";
 import AllTouristStory from "../../TouristStory/AllTouristStory";
 import MyTourGuideProfile from "../Dashboard/TourGuide/MyTourGuideProfile";
 import AddNewTourGuide from "../TourGuide/AddNewTourGuide";
+import AddNewStory from "../Dashboard/Tourist/AddNewStory";
 
 
 
@@ -107,6 +108,10 @@ import AddNewTourGuide from "../TourGuide/AddNewTourGuide";
             {
                 path: 'userProfile',
                 element: <MyProfile></MyProfile>
+               },
+            {
+                path: 'add-New-Story',
+                element: <AddNewStory></AddNewStory>
                },
                {
                 path: 'myBookings',

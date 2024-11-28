@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 
@@ -34,6 +35,12 @@ const MyProfile = () => {
 </label>
 </div>
 </form>
+<div className="mx-auto text-center items-center">
+  <Link to={'/dashboard/add-New-Story'}>
+  <button className="btn btn-primary">Add a story</button>
+  </Link>
+</div>
+
    </div>
    )
     

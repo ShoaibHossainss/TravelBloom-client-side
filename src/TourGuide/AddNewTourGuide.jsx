@@ -16,7 +16,7 @@ const AddNewTourGuide = () => {
         position: data.position,
         company: data.company,
         years: data.years,
-        skills: [data.skills,data.skills,data.skills],
+        skills: [data.skills1,data.skills2,data.skills3],
        }
        console.log(formData)
         Swal.fire({
@@ -136,7 +136,7 @@ const AddNewTourGuide = () => {
         <div className="label">
         <span className="label-text">Skills</span>
         </div>
-        <input {...register("skills",{required: true})} type="text" placeholder="Enter your first skills" className="input input-bordered w-full" />
+        <input {...register("skills1",{required: true})} type="text" placeholder="Enter your first skills" className="input input-bordered w-full" />
         </label>
         </div>
         <div className="form-control w-full">
@@ -144,7 +144,7 @@ const AddNewTourGuide = () => {
         <div className="label">
         <span className="label-text">Skills 2</span>
         </div>
-        <input {...register("skills",{required: true})} type="text" placeholder="Enter your second skills" className="input input-bordered w-full" />
+        <input {...register("skills2",{required: true})} type="text" placeholder="Enter your second skills" className="input input-bordered w-full" />
         </label>
         </div>
         </div>
@@ -153,7 +153,7 @@ const AddNewTourGuide = () => {
         <div className="label">
         <span className="label-text">Skills 3</span>
         </div>
-        <input {...register("skills",{required: true})} type="text" placeholder="Enter your third skills" className="input input-bordered w-full" />
+        <input {...register("skills3",{required: true})} type="text" placeholder="Enter your third skills" className="input input-bordered w-full" />
         </label>
         </div>
        
