@@ -56,7 +56,7 @@ const MyAssignedTour = () => {
       <tr>
         <th></th>
         <th>Package Name</th>
-        <th>Guide Name</th>
+        <th>Tourist Name</th>
         <th>Date</th>
         <th>Price</th>
         <th>Status</th>
@@ -67,7 +67,7 @@ const MyAssignedTour = () => {
         touristForm.map((tourist,index)=><tr key={tourist._id}>
         <th>{index+1}</th>
         <td>{tourist.tour_name}</td>
-        <td>{tourist.guide}</td>
+        <td>{tourist.name}</td>
         <td>{tourist.date}</td>
         <td>{tourist.price}</td>
         <td>{tourist.status}</td>

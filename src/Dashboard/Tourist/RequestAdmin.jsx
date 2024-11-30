@@ -2,16 +2,28 @@
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const RequestAdmin = () => {
-    const { user } = useAuth(); // Assuming user contains user details like email, role
-    const axiosSecure = useAxiosSecure();
-    const [isRequested, setIsRequested] = useState(user?.role === 'requested'); // Check initial role
+    const { user } = useAuth();
+    const axiosSecure = useAxiosSecure(); 
+    const [isRequested, setIsRequested] = useState(false); 
+    useEffect(() => {
+       {
+        if(user?.email){
+        axiosSecure.get(`/users/${user?.email}`)
+        .then(res => {
+            if (res.data.role === 'requested') {
+                setIsRequested(true);
+            }
+        })
+        }
+       }
+    }, [user?.email,axiosSecure]);
 
     const handleRequest = () => {
-        axiosSecure.patch('/users/request-guide', { email: user.email })
+        axiosSecure.patch('/users/request-guide', { email: user?.email })
             .then(res => {
                 if (res.data.modifiedCount > 0) {
                     Swal.fire({
@@ -21,7 +33,7 @@ const RequestAdmin = () => {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    setIsRequested(true); // Update the button state
+                    setIsRequested(true); 
                 }
             })
             .catch(() => {
