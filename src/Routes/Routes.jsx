@@ -122,7 +122,7 @@ import AddNewStory from "../Dashboard/Tourist/AddNewStory";
                 element: <MyWishlist></MyWishlist>
                },
                {
-                path: 'requestToAdmin',
+                path: 'requestAdmin',
                 element: <RequestAdmin></RequestAdmin>
                },
             //    {tour guide}

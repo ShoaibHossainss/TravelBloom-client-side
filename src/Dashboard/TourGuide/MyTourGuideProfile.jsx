@@ -33,9 +33,11 @@ const MyTourGuideProfile = () => {
    </label>
    </div>
    </form>
-   <Link to={'/dashboard/Add-New-TourGuide'}>
+  <div className="mx-auto text-center items-center">
+  <Link to={'/dashboard/Add-New-TourGuide'}>
    <button className='btn'>Add New Tour Guide</button>
    </Link>
+  </div>
    
     
    

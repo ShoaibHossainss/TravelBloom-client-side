@@ -17,10 +17,10 @@ const MyBooking = () => {
     })
 
     const handleCancel = (id) => { 
-        axiosSecure.patch(`/touristForm/${id}`,{ status: "Cancelled" })
+        axiosSecure.delete(`/touristForm/${id}`)
         .then(res=>{
             console.log(res.data)
-            if(res.data.modifiedCount > 0){
+            if(res.data.deletedCount > 0){
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -90,6 +90,7 @@ const MyBooking = () => {
                 </button>
             )
             }
+            
         </td>
         </tr>)
     }

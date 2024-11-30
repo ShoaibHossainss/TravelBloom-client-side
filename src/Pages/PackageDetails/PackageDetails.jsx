@@ -1,5 +1,5 @@
 
-import { Link, useLoaderData, useNavigate, useParams,} from "react-router-dom";
+import { Link, useLoaderData, useParams,} from "react-router-dom";
 
 import { useQuery } from "@tanstack/react-query";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
@@ -21,6 +21,16 @@ const PackageDetails = () => {
   const [tourGuide] = useTourGuide()
   const [admin] = useAdmin()
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedGuide, setSelectedGuide] = useState({ name: "", email: "" });
+
+  const handleGuideChange = (e) => {
+    const guideName = e.target.value;
+    const guide = tourGuides.find((g) => g.name === guideName);
+    setSelectedGuide({
+      name: guide?.name || "",
+      email: guide?.email || "",
+    });
+  };
   
   
     const packages = useLoaderData();
@@ -64,6 +74,8 @@ const PackageDetails = () => {
     date: data.date,
     price: data.price,
     guide: data.guide_name,
+    guide_email: data.guide_email,
+    status: "In Review"
    }
    console.log(formData)
    Swal.fire({
@@ -191,33 +203,19 @@ const PackageDetails = () => {
           </label>
         </div>
         <div className="form-control w-full">
-        <label>
+          <label>
             <div className="label">
-              <span className="label-text">Date</span>
+              <span className="label-text">Price</span>
             </div>
-            <Controller
-              name="date"
-              control={control}
-              rules={{ required: "Date is required" }}
-              defaultValue={null} // Ensure default value is null to avoid issues
-              render={({ field: { onChange, value } }) => (
-                <DatePicker
-                  selected={value} // Bind value from form state
-                  onChange={(date) => {
-                    // Format the date into YYYY-MM-DD and update form state
-                    const formattedDate = date ? date.toISOString().split("T")[0] : null;
-                    onChange(formattedDate); // Pass formatted date to React Hook Form
-                  }}
-                  className="input input-bordered w-full"
-                  dateFormat="yyyy-MM-dd" // Display the correct format in the input
-                  placeholderText="YYYY-MM-DD"
-                />
-              )}
+            <input
+              {...register("price", { required: true })}
+              type="text"
+              defaultValue={spot.price}
+              className="input input-bordered w-full"
+              readOnly
             />
           </label>
-
         </div>
-
       </div>
 
       <div className="lg:flex mb-2 gap-4">
@@ -252,21 +250,6 @@ const PackageDetails = () => {
       </div>
 
       <div className="lg:flex mb-2 gap-4">
-        <div className="form-control w-full">
-          <label>
-            <div className="label">
-              <span className="label-text">Price</span>
-            </div>
-            <input
-              {...register("price", { required: true })}
-              type="text"
-              defaultValue={spot.price}
-              className="input input-bordered w-full"
-              readOnly
-            />
-          </label>
-        </div>
-
         <div className="form-control w-full mb-2">
           <div className="label">
             <span className="label-text">Guide Name</span>
@@ -274,7 +257,8 @@ const PackageDetails = () => {
           <select
             defaultValue="default"
             {...register("guide_name", { required: true })}
-            className="select select-bordered w-full"
+            className="select select-bordered w-full" 
+            onChange={handleGuideChange}
           >
             <option value="default" disabled>
               Select a category
@@ -286,7 +270,48 @@ const PackageDetails = () => {
             ))}
           </select>
         </div>
+        <div className="form-control w-full">
+          <label>
+            <div className="label">
+              <span className="label-text">Guide Email</span>
+            </div>
+            <input
+              {...register("guide_email", { required: true })}
+              type="text"
+              value={selectedGuide.email} 
+              className="input input-bordered w-full"
+              readOnly
+            />
+          </label>
+        </div>
       </div>
+      <div className="form-control w-full">
+        <label>
+            <div className="label">
+              <span className="label-text">Date</span>
+            </div>
+            <Controller
+              name="date"
+              control={control}
+              rules={{ required: "Date is required" }}
+              defaultValue={null} // Ensure default value is null to avoid issues
+              render={({ field: { onChange, value } }) => (
+                <DatePicker
+                  selected={value} // Bind value from form state
+                  onChange={(date) => {
+                    // Format the date into YYYY-MM-DD and update form state
+                    const formattedDate = date ? date.toISOString().split("T")[0] : null;
+                    onChange(formattedDate); // Pass formatted date to React Hook Form
+                  }}
+                  className="input input-bordered w-full"
+                  dateFormat="yyyy-MM-dd" // Display the correct format in the input
+                  placeholderText="YYYY-MM-DD"
+                />
+              )}
+            />
+          </label>
+
+        </div>
 
       <div>
   {

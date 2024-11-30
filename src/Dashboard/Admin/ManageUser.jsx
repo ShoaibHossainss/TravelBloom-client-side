@@ -36,7 +36,7 @@ const ManageUser = () => {
         axiosSecure.patch(`/users/tourGuide/${user?._id}`)
         .then(res=>{
             console.log(res.data)
-            if(res.data.modifiedCount > 0){
+            if(res.data.success){
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -48,6 +48,22 @@ const ManageUser = () => {
             }
         })
     }
+
+    const handleApproveRequest = (user) => {
+      axiosSecure.patch(`/users/tourGuide/${user?._id}`)
+          .then(res => {
+              if (res.data.success) {
+                  Swal.fire({
+                      position: "top-end",
+                      icon: "success",
+                      title: `${user.name} is now a Tour Guide!`,
+                      showConfirmButton: false,
+                      timer: 1500
+                  });
+                  refetch();
+              }
+          });
+  };
 
     const handleDeleteUser = user => {
         Swal.fire({
@@ -82,6 +98,36 @@ const ManageUser = () => {
            <h3>All Users</h3>
            <h3>Total Users : {users.length}</h3>
            </div>
+           <h3 className="text-xl font-bold mb-4 text-center">Tour Guide Requests</h3>
+           <div className="overflow-x-auto">
+           <table className="table table-zebra w-full">
+          <thead>
+             <tr>
+                <th></th>
+               <th>Name</th>
+               <th>Email</th>
+              <th>Action</th>
+         </tr>
+       </thead>
+        <tbody>
+    {users.filter(user => user.role === 'requested')
+     .map((user, index) => (
+     <tr key={user._id}>
+    <th>{index + 1}</th>
+     <td>{user.name}</td>
+   <td>{user.email}</td>
+      <td>
+ <button
+ onClick={() => handleApproveRequest(user)}
+className="btn btn-xl bg-green-500 text-white">
+Approve   </button>
+ </td>
+    </tr>
+     ))}
+     </tbody>
+     </table>
+           </div>
+           <h3 className="text-xl font-bold mb-4 mt-10 text-center">User Requests</h3>
            <div className="overflow-x-auto">
   <table className="table table-zebra w-full">
     {/* head */}
@@ -94,6 +140,7 @@ const ManageUser = () => {
         <th>Action</th>
       </tr>
     </thead>
+    
     <tbody>
      {
         users.map((user,index)=><tr key={user._id}>
