@@ -3,6 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 import { FaTrash, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { useState } from "react";
+import Select from "react-select";
+
 
 
 const ManageUser = () => {
@@ -14,7 +17,26 @@ const ManageUser = () => {
           return res.data;
       }
   })
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedRole, setSelectedRole] = useState("");
 
+
+  const roleOptions = [
+      { value: "", label: "All" },
+      { value: "admin", label: "Admin" },
+      { value: "tourGuide", label: "Tour Guide" },
+      { value: "requested", label: "Requested" },
+  ];
+  const filteredUsers = users.filter((user) => {
+    const matchesSearch =
+        user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        user.email.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesRole = selectedRole ? user.role === selectedRole : true;
+    return matchesSearch && matchesRole 
+});
+const handleMenuOpen = () => {
+  console.log("Dropdown menu opened!");
+};
 
     const handleMakeAdmin = user =>{
         axiosSecure.patch(`/users/admin/${user?._id}`)
@@ -92,41 +114,66 @@ const ManageUser = () => {
           });
 
     }
+    const tourGuideRequests = users.filter((user) => user.role === "requested");
     return (
         <div >
            <div className="flex justify-evenly py-8">
            <h3>All Users</h3>
            <h3>Total Users : {users.length}</h3>
            </div>
+           <div className="flex gap-4 mb-4">
+                {/* Search Input */}
+                <input
+                    type="text"
+                    placeholder="Search by Name/Email"
+                    className="input input-bordered w-full max-w-sm"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+
+                {/* Role Filter */}
+                <Select
+                    options={roleOptions}
+                    defaultValue={roleOptions[0]}
+                    onMenuOpen={handleMenuOpen}
+                    onChange={(selected) => setSelectedRole(selected.value)}
+                    className="w-full max-w-xs"
+                />
+            </div>
            <h3 className="text-xl font-bold mb-4 text-center">Tour Guide Requests</h3>
-           <div className="overflow-x-auto">
-           <table className="table table-zebra w-full">
-          <thead>
-             <tr>
-                <th></th>
-               <th>Name</th>
-               <th>Email</th>
-              <th>Action</th>
-         </tr>
-       </thead>
-        <tbody>
-    {users.filter(user => user.role === 'requested')
-     .map((user, index) => (
-     <tr key={user._id}>
-    <th>{index + 1}</th>
-     <td>{user.name}</td>
-   <td>{user.email}</td>
-      <td>
- <button
- onClick={() => handleApproveRequest(user)}
-className="btn btn-xl bg-green-500 text-white">
-Approve   </button>
- </td>
-    </tr>
-     ))}
-     </tbody>
-     </table>
-           </div>
+           {tourGuideRequests.length === 0 ? (
+                <p className="text-center mt-4">No tour guide requests at the moment.</p>
+            ) : (
+                <div className="overflow-x-auto">
+                 <table className="table table-zebra w-full">
+                <thead>
+                 <tr>
+                  <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+               <th>Action</th>
+               </tr>
+              </thead>
+              <tbody>
+            {tourGuideRequests.map((user, index) => (
+              <tr key={user._id}>
+              <th>{index + 1}</th>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>
+               <button
+                onClick={() => handleApproveRequest(user)}
+                className="btn btn-xl bg-green-500 text-white"
+                >
+                Approve
+                </button>
+                </td>
+                </tr>
+                ))}
+                </tbody>
+                </table>
+                </div>
+            )}
            <h3 className="text-xl font-bold mb-4 mt-10 text-center">User Requests</h3>
            <div className="overflow-x-auto">
   <table className="table table-zebra w-full">
@@ -143,7 +190,7 @@ Approve   </button>
     
     <tbody>
      {
-        users.map((user,index)=><tr key={user._id}>
+        filteredUsers.map((user,index)=><tr key={user._id}>
             <th>{index+1}</th>
             <td>{user.name}</td>
             <td>{user.email}</td>

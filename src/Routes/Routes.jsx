@@ -28,6 +28,9 @@ import AllTouristStory from "../../TouristStory/AllTouristStory";
 import MyTourGuideProfile from "../Dashboard/TourGuide/MyTourGuideProfile";
 import AddNewTourGuide from "../TourGuide/AddNewTourGuide";
 import AddNewStory from "../Dashboard/Tourist/AddNewStory";
+import AdminProfile from "../Dashboard/Admin/AdminProfile";
+import AdminPrivateRoute from "./AdminPrivateRoute";
+import TouristPrivateRoute from "./TouristPrivateRoute";
 
 
 
@@ -115,7 +118,7 @@ import AddNewStory from "../Dashboard/Tourist/AddNewStory";
                },
                {
                 path: 'myBookings',
-                element: <MyBooking></MyBooking>
+                element:<MyBooking></MyBooking>
                },
                {
                 path: 'myWishlist',
@@ -128,28 +131,28 @@ import AddNewStory from "../Dashboard/Tourist/AddNewStory";
             //    {tour guide}
                {
                 path: 'tourGuideProfile',
-                element: <MyTourGuideProfile></MyTourGuideProfile>
+                element: <TouristPrivateRoute><MyTourGuideProfile></MyTourGuideProfile></TouristPrivateRoute>
                },
                {
                 path: 'Add-New-TourGuide',
-                element: <AddNewTourGuide></AddNewTourGuide>
+                element: <TouristPrivateRoute><AddNewTourGuide></AddNewTourGuide></TouristPrivateRoute>
                },
                {
                path: 'myAssignedTour',
-               element: <MyAssignedTour></MyAssignedTour>
+               element: <TouristPrivateRoute><MyAssignedTour></MyAssignedTour></TouristPrivateRoute>
                },
             // {admin}
             {
                 path: 'adminProfile',
-                element: <MyProfile></MyProfile>
+                element: <AdminPrivateRoute><AdminProfile></AdminProfile></AdminPrivateRoute>
                },
             {
                 path: 'manageUsers',
-                element: <ManageUser></ManageUser>
+                element: <AdminPrivateRoute><ManageUser></ManageUser></AdminPrivateRoute>
                },
                {
                 path: 'addPackage',
-                element: <AddPackage></AddPackage>
+                element: <AdminPrivateRoute><AddPackage></AddPackage></AdminPrivateRoute>
                },
         ]
     }

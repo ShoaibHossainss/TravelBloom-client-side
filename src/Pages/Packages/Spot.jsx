@@ -3,16 +3,49 @@ import {FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
+import { useEffect, useState } from 'react';
+import useAdmin from '../../hooks/useAdmin';
+import useTourGuide from '../../hooks/useTourGuide';
+
 
 const Spot = ({spot}) => {
   const {user} = useAuth();
+  const [admin] = useAdmin();
+  const [tourGuide] = useTourGuide();
     const {primary_image,tour_type,trip_title,price,_id} = spot;
+    const [wishlist, setWishlist] = useState([]);
+    useEffect(() => {
+      if (user?.email) {
+        fetch(`http://localhost:5000/wishlist?email=${user?.email}`)
+          .then((res) => res.json())
+          .then((data) => setWishlist(data));
+      }
+    }, [user?.email]);
     const handleAddToWishlist = () => {
       if (!user) {
         Swal.fire({
             icon: 'warning',
             title: 'Please log in to add items to your wishlist.',
             showConfirmButton: true,
+        });
+        return;
+    }
+    
+if (admin || tourGuide) {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Admins and tour guides cannot add items to the wishlist.',
+    showConfirmButton: true,
+  });
+  return;
+}
+ 
+    const checkWishlist = wishlist.find((item) => item.packageId === _id);
+    if (checkWishlist) {
+        Swal.fire({
+            title: "Already Added",
+            text: "This package is already in your wishlist.",
+            icon: "info",
         });
         return;
     }
@@ -50,6 +83,7 @@ const Spot = ({spot}) => {
                     text: "Package has been added to your wishlist",
                     icon: "success"
                   });
+                  setWishlist((prev) => [...prev, wishlistItem]);
             }  
           })
           .catch(error => {

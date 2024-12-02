@@ -1,13 +1,14 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import useTourist from "../hooks/useTourist";
+import useTourGuide from "../hooks/useTourGuide";
+
 
 
 
 const TouristPrivateRoute = ({ children }) => {
     const { user, loading } = useAuth();
     const location = useLocation();
-    const [isTourist,isTouristLoading] = useTourist()
+    const [isTourist,isTouristLoading] = useTourGuide()
 
     if(loading || isTouristLoading){
         return <progress className="progress w-56"></progress>

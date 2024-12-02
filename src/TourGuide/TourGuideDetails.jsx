@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Navbar from "../Pages/Navbar";
 
 
 const TourGuideDetails = () => {
@@ -30,12 +31,11 @@ const TourGuideDetails = () => {
     };
     return (
         <div>
-             <div className="card bg-base-100 w-96 shadow-xl mx-auto justify-center">
-          <figure>
-          <img className='relative'
-            src={guide.profilePicture}
-            alt="Shoes"/>
-          </figure>
+          <Navbar></Navbar>
+             <div className="flex mt-10">
+          <div className="w-1/2">
+          <img src={guide.profilePicture} alt="" />
+          </div>
         <div className="card-body">
         <h2 className="card-title">Name: {guide.name}</h2>
           <p>Email: {guide.email}</p>
@@ -49,7 +49,7 @@ const TourGuideDetails = () => {
           <p>Company: {guide.company}</p>
           <p>Years: {guide.years}</p>
           <Link to={'/'}>
-         <div className="card-actions justify-end">
+         <div className="card-actions">
             <button className="btn btn-primary">Go Back</button>
           </div>
          </Link>
