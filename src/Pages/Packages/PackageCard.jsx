@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const PackageCard = () => {
     const [spots,setSpots] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/touristSpot')
+        fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot')
         .then(res=>res.json())
         .then(data=>setSpots(data))
     },[])
@@ -17,7 +17,7 @@ const PackageCard = () => {
                 <br />
                 <span>Visit and choose yours</span>
             </h3>
-        <div className="mx-auto ml-8 grid grid-cols-3 gap-6 ">
+        <div className="mx-auto lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-6 ">
         {
             spots.map(spot=><Spot key={spot.id} spot={spot}></Spot>)
         }

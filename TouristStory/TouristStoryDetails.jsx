@@ -23,7 +23,7 @@ const TouristStoryDetails = () => {
     return (
       <div>
         <Navbar></Navbar>
-        <div className="flex mt-10">
+        <div className="lg:flex lg:mt-10 md:mt-6 mt-4">
           <div>
             <img src={story.imageUrl} alt="" />
           </div>

@@ -6,16 +6,16 @@ import { Link } from "react-router-dom";
 const TourGuide = () => {
     const [tourGuide,setTourGuide] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/tourGuides')
+        fetch('https://assignment-12-server-lac-ten.vercel.app/tourGuides')
         .then(res=>res.json())
         .then(data=>setTourGuide(data))
     },[])
     console.log(tourGuide)
     return (
-        <div className="mx-auto ml-8 grid grid-cols-3 gap-6">
+        <div className="lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto lg:gap-6 ">
           {
             tourGuide.map(p=>
-                <div key={p._id} className="card bg-base-100 w-96 shadow-xl">
+                <div key={p._id} className="card lg:w-96 md:w-96 bg-base-100 shadow-xl mb-4">
           <figure>
           <img className='relative'
             src={p.profilePicture}

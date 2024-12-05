@@ -5,7 +5,7 @@ const Cultural = () => {
     const [items,setItem] = useState([]);
     
     useEffect(()=>{
-        fetch('http://localhost:5000/touristSpot')
+        fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot')
         .then(res=>res.json())
         .then(data=>{
             setItem(data.filter(item=>item.tour_type==='Cultural'))

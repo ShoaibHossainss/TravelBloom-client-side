@@ -49,7 +49,7 @@ const MyAssignedTour = () => {
     
     return (
         <div>
-            <h3>Nice</h3>
+           
             <div>
             <table className="table table-zebra w-full">
             <thead>

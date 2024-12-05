@@ -14,6 +14,7 @@ import TourGuide from "../../TourGuide/TourGuide";
 import { useState } from "react";
 import useTourGuide from "../../hooks/useTourGuide";
 import useAdmin from "../../hooks/useAdmin";
+import Navbar from "../Navbar";
 
 
 const PackageDetails = () => {
@@ -88,7 +89,7 @@ const PackageDetails = () => {
     confirmButtonText: "Yes, add it!"
   }).then((result) => {
     if (result.isConfirmed){
-        fetch('http://localhost:5000/touristForm',{
+        fetch('https://assignment-12-server-lac-ten.vercel.app/touristForm',{
             method: 'POST',
             headers: {
               'content-type': 'application/json'
@@ -122,7 +123,8 @@ const PackageDetails = () => {
     return (
      
     <div>
-        <div>
+      <Navbar></Navbar>
+        <div className="mx-auto lg:mt-8 md:mt-6 mt-4">
       <div className="flex w-10/12 items-center mx-auto gap-4">
       <div>
      <img className="mb-4" src={spot.secondary_images[0]} alt="" />
@@ -167,7 +169,7 @@ const PackageDetails = () => {
       </div>
       
      </div>
-<div className="mb-6">
+<div className="lg:mb-6 md:mb-5 mb-4 lg:mt-6 md:mt-5 mt-4">
   <h3 className="text-center mb-6">Lets look at our tour guides</h3>
   <TourGuide></TourGuide>
 </div>

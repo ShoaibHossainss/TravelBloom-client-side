@@ -3,6 +3,7 @@ import 'react-tabs/style/react-tabs.css';
 import PackageCard from './Packages/PackageCard';
 import TourGuide from '../TourGuide/TourGuide';
 
+
 const Tourism = () => {
     return (
       <div>
@@ -14,7 +15,10 @@ const Tourism = () => {
 
 </TabList>
 <TabPanel>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nHOAkgEB5c0?si=5qFBrYOoUs_ktrkv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+<div className="w-full"> 
+<iframe className="lg:w-[560px] lg:h-[315px] w-full"   src="https://www.youtube.com/embed/nHOAkgEB5c0?si=5qFBrYOoUs_ktrkv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+</div>
+
 </TabPanel>
 <TabPanel>
 <PackageCard></PackageCard>

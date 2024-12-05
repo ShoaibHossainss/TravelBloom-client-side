@@ -16,9 +16,9 @@ const AllPackage = () => {
         
         <div>
             <Navbar></Navbar>
-           <div className="mx-auto grid grid-cols-3 gap-10 mt-10">
+           <div className=" lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto w-full lg:gap-10 lg:mt-10 mt-4 gap-4">
            {
-                allPackage.map(p=> <div key={p._id} className="card bg-base-100 w-96 shadow-xl">
+                allPackage.map(p=> <div key={p._id} className="card bg-base-100 mb-4 shadow-xl">
                     <figure>
                     <img className='relative'
                       src={p.primary_image}

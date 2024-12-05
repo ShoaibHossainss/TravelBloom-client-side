@@ -29,7 +29,7 @@ const AddPackage = () => {
             confirmButtonText: "Yes, add it!"
           }).then((result) => {
             if (result.isConfirmed){
-                fetch('http://localhost:5000/touristSpot',{
+                fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot',{
                     method: 'POST',
                     headers: {
                       'content-type': 'application/json'
@@ -56,7 +56,7 @@ const AddPackage = () => {
     return (
         <div>
         <h3 className="text-3xl text-center mt-6">Add Your Package Here</h3>
-        <form className="mx-10" onSubmit={handleSubmit(onSubmit)}>
+        <form className="lg:mx-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full mb-2">
         <div className="label">
         <span className="label-text">Category</span>

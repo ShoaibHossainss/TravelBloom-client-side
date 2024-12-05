@@ -29,7 +29,7 @@ const AddNewTourGuide = () => {
             confirmButtonText: "Yes, add it!"
           }).then((result) => {
             if (result.isConfirmed){
-                fetch('http://localhost:5000/tourGuides',{
+                fetch('https://assignment-12-server-lac-ten.vercel.app/tourGuides',{
                     method: 'POST',
                     headers: {
                       'content-type': 'application/json'

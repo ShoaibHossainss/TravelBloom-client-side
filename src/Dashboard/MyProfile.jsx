@@ -17,8 +17,9 @@ const MyProfile = () => {
    }
   </div>
 </div>
-<form className="card-body">
-<div className="w-1/2 mx-auto items-center justify-center text-center">
+<div className="ml-4">
+<form className="card-body w-1/2 mt-4 mx-auto">
+<div className="items-center justify-center text-center mb-3 form-control w-full">
 <label className="input input-bordered flex justify-center items-center text-center gap-2">
 {
                 user?.displayName
@@ -26,7 +27,7 @@ const MyProfile = () => {
 
 </label>
 </div>
-<div className="w-1/2 mx-auto items-center justify-center text-center">
+<div className="items-center justify-center text-center mb-3 form-control w-full">
 <label className="input input-bordered flex justify-center items-center text-center gap-2">
   {
     user?.email
@@ -35,6 +36,7 @@ const MyProfile = () => {
 </label>
 </div>
 </form>
+</div>
 <div className="mx-auto text-center items-center">
   <Link to={'/dashboard/add-New-Story'}>
   <button className="btn btn-primary">Add a story</button>

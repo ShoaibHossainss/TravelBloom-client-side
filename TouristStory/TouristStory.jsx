@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 const TouristStory = () => {
     const [touristStory,setTouristStory] = useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/touristStory')
+        fetch('https://assignment-12-server-lac-ten.vercel.app/touristStory')
         .then(res=>res.json())
         .then(data=>setTouristStory(data))
     },[])
     console.log(touristStory)
     return (
         <div>
-              <div className="mx-auto ml-8 grid grid-cols-3 gap-6">
+              <div className="mx-auto lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-6">
         {
           touristStory.map(p=>
             <Link to={`/touristStory-details/${p._id}`} key={p._id}>
-              <div  className="card bg-base-100 w-96 shadow-xl">
+              <div  className="card bg-base-100 mb-4 shadow-xl">
         <figure>
         <img className='relative'
           src={p.imageUrl}

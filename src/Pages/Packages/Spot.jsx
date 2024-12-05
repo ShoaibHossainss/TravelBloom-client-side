@@ -16,7 +16,7 @@ const Spot = ({spot}) => {
     const [wishlist, setWishlist] = useState([]);
     useEffect(() => {
       if (user?.email) {
-        fetch(`http://localhost:5000/wishlist?email=${user?.email}`)
+        fetch(`https://assignment-12-server-lac-ten.vercel.app/wishlist?email=${user?.email}`)
           .then((res) => res.json())
           .then((data) => setWishlist(data));
       }
@@ -67,7 +67,7 @@ if (admin || tourGuide) {
     confirmButtonText: "Yes, add it!"
   }).then((result) => {
     if (result.isConfirmed){
-        fetch('http://localhost:5000/wishlist',{
+        fetch('https://assignment-12-server-lac-ten.vercel.app/wishlist',{
             method: 'POST',
             headers: {
               'content-type': 'application/json'
@@ -100,7 +100,7 @@ if (admin || tourGuide) {
   });
     }
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
+        <div className="card bg-base-100  shadow-xl text-orange-600 mb-10 hover:bg-teal-200">
           <figure>
           <img className='relative'
             src={primary_image}

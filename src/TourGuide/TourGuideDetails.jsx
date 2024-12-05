@@ -32,8 +32,8 @@ const TourGuideDetails = () => {
     return (
         <div>
           <Navbar></Navbar>
-             <div className="flex mt-10">
-          <div className="w-1/2">
+             <div className="lg:flex md:flex lg:mt-10 md:mt-8 mt-4">
+          <div className="lg:w-1/2 md:w-1/2">
           <img src={guide.profilePicture} alt="" />
           </div>
         <div className="card-body">

@@ -46,27 +46,27 @@ import TouristPrivateRoute from "./TouristPrivateRoute";
         {
                 path: '/all-package',
                 element: <AllPackage></AllPackage>,
-                loader: () => fetch('http://localhost:5000/touristSpot')
+                loader: () => fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot')
         },
         {
                 path: '/all-touristStory',
                 element: <AllTouristStory></AllTouristStory>,
-                loader: () => fetch('http://localhost:5000/touristStory')
+                loader: () => fetch('https://assignment-12-server-lac-ten.vercel.app/touristStory')
         },
         {
                 path: '/package-details/:id',
                 element: <PackageDetails></PackageDetails>,
-                loader: () => fetch('http://localhost:5000/touristSpot')
+                loader: () => fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot')
         },
         {
                 path: '/tourGuide-details/:id',
                 element: <TourGuideDetails></TourGuideDetails>,
-                loader: () => fetch('http://localhost:5000/tourGuides')
+                loader: () => fetch('https://assignment-12-server-lac-ten.vercel.app/tourGuides')
         },
         {
                 path: '/touristStory-details/:id',
                 element: <TouristStoryDetails></TouristStoryDetails>,
-                loader: () => fetch('http://localhost:5000/touristStory')
+                loader: () => fetch('https://assignment-12-server-lac-ten.vercel.app/touristStory')
         },
         {
             path: '/login',

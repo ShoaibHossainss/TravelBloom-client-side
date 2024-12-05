@@ -116,12 +116,11 @@ const handleMenuOpen = () => {
     }
     const tourGuideRequests = users.filter((user) => user.role === "requested");
     return (
-        <div >
+        <div className="w-full">
            <div className="flex justify-evenly py-8">
-           <h3>All Users</h3>
            <h3>Total Users : {users.length}</h3>
            </div>
-           <div className="flex gap-4 mb-4">
+           <div className="flex gap-4 items-center justify-center">
                 {/* Search Input */}
                 <input
                     type="text"
@@ -140,11 +139,11 @@ const handleMenuOpen = () => {
                     className="w-full max-w-xs"
                 />
             </div>
-           <h3 className="text-xl font-bold mb-4 text-center">Tour Guide Requests</h3>
+           <h3 className="text-xl font-bold mb-4 text-center mt-4">Tour Guide Requests</h3>
            {tourGuideRequests.length === 0 ? (
                 <p className="text-center mt-4">No tour guide requests at the moment.</p>
             ) : (
-                <div className="overflow-x-auto">
+                <div>
                  <table className="table table-zebra w-full">
                 <thead>
                  <tr>
@@ -175,7 +174,7 @@ const handleMenuOpen = () => {
                 </div>
             )}
            <h3 className="text-xl font-bold mb-4 mt-10 text-center">User Requests</h3>
-           <div className="overflow-x-auto">
+           <div>
   <table className="table table-zebra w-full">
     {/* head */}
     <thead>

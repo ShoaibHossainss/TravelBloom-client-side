@@ -12,12 +12,12 @@ const TourType = () => {
    
    
     return (
-        <div>
+        <div className="lg:mt-10 md:mt-8 mt-4">
             <h3 className="text-center">Look at our packages and
                 <br />
                 <span>browse your favorite ones</span>
             </h3>
-            <div className="grid grid-cols-3 gap-6 mx-auto p-4">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-6 md:gap-4 mx-auto lg:p-4 lg:mt-8 md:mt-6 mt-4">
             <div className="text-center">
                 <img className="opacity-90"  src={image1} alt="" />
                <Link to='/adventure'>
