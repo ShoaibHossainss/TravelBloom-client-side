@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import Footer from "../../Footer/Footer";
 
 
 
@@ -37,12 +38,12 @@ const MyProfile = () => {
 </div>
 </form>
 </div>
-<div className="mx-auto text-center items-center">
+<div className="mx-auto text-center items-center mb-4">
   <Link to={'/dashboard/add-New-Story'}>
   <button className="btn btn-primary">Add a story</button>
   </Link>
 </div>
-
+<Footer></Footer>
    </div>
    )
     

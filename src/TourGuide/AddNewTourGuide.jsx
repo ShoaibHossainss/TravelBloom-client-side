@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import Navbar from "../Pages/Navbar";
+import Footer from "../../Footer/Footer";
 
 
 const AddNewTourGuide = () => {
@@ -55,8 +57,9 @@ const AddNewTourGuide = () => {
     } 
     return (
         <div>
+          <Navbar></Navbar>
         <h3 className="text-3xl text-center mt-6">Add New Tour Guide Here</h3>
-        <form className="mx-10" onSubmit={handleSubmit(onSubmit)}>
+        <form className="mx-10 mb-4" onSubmit={handleSubmit(onSubmit)}>
        
         <div className='lg:flex mb-2 gap-4'>
         <div className="form-control w-full">
@@ -160,6 +163,7 @@ const AddNewTourGuide = () => {
        
         <button className="btn flex mx-auto mt-4">Add Tour Guide</button>
         </form>
+        <Footer></Footer>
         </div>
     );
 };

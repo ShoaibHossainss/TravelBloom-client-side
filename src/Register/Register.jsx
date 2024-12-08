@@ -4,6 +4,8 @@ import Swal from "sweetalert2";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Footer from "../../Footer/Footer";
+import Navbar from "../Pages/Navbar";
 
 
 const Register = () => {
@@ -56,7 +58,9 @@ const Register = () => {
     };
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
+        <div>
+            <Navbar></Navbar>
+            <div className="hero bg-base-200 min-h-screen mt-4 mb-4">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Sign Up now!</h1>
@@ -121,6 +125,9 @@ const Register = () => {
                     <p><small>Already have an account? <Link to='/login'>Login Here</Link></small></p>
                 </div>
             </div>
+            
+        </div>
+        <Footer></Footer>
         </div>
     );
 };

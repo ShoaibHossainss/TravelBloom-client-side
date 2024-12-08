@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from "react-simple-captcha";
+import Footer from "../../../Footer/Footer";
+import Navbar from "../Navbar";
 
 
 const Login = () => {
@@ -61,7 +63,9 @@ const Login = () => {
     return (
      
       
-        <div className="hero bg-base-200 min-h-screen">
+       <div>
+        <Navbar></Navbar>
+         <div className="hero bg-base-200 min-h-screen mt-4 mb-4">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center md:w-1/2 lg:text-left">
             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -108,6 +112,8 @@ const Login = () => {
         </div>
        
       </div>
+      <Footer></Footer>
+       </div>
        
     );
 };

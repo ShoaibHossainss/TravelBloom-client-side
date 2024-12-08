@@ -5,6 +5,7 @@ import useAuth from "../src/hooks/useAuth";
 import useAdmin from "../src/hooks/useAdmin";
 import useTourGuide from "../src/hooks/useTourGuide";
 import Navbar from "../src/Pages/Navbar";
+import Footer from "../Footer/Footer";
 
 
 
@@ -45,7 +46,7 @@ const TouristStoryDetails = () => {
 </div>
 
 </div>
-        <div className="mx-auto text-center items-center mt-10">
+        <div className="mx-auto text-center items-center mt-10 mb-4">
         {
   user ? (
     <>
@@ -65,6 +66,7 @@ const TouristStoryDetails = () => {
   )
 }
         </div>
+        <Footer></Footer>
       </div>
         
     );

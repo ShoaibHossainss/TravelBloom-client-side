@@ -15,6 +15,7 @@ import { useState } from "react";
 import useTourGuide from "../../hooks/useTourGuide";
 import useAdmin from "../../hooks/useAdmin";
 import Navbar from "../Navbar";
+import Footer from "../../../Footer/Footer";
 
 
 const PackageDetails = () => {
@@ -371,7 +372,7 @@ const PackageDetails = () => {
 
     </form>
  
-   <div className="text-center justify-center items-center mx-auto mt-4">
+   <div className="text-center justify-center items-center mx-auto mt-4 mb-4">
    <Link to='/'>
      <button className="btn btn-primary">Go Back</button>
      </Link>
@@ -380,7 +381,7 @@ const PackageDetails = () => {
  
 </div>
 
-     
+<Footer></Footer>
     </div>
      
     );

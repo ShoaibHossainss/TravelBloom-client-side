@@ -1,6 +1,7 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import { Link } from 'react-router-dom';
+import Footer from '../../../Footer/Footer';
 
 const MyTourGuideProfile = () => {
     const {user} = useAuth()
@@ -35,14 +36,14 @@ const MyTourGuideProfile = () => {
    </div>
    </form>
    </div>
-  <div className="mx-auto text-center items-center">
+  <div className="mx-auto text-center items-center mb-4">
   <Link to={'/dashboard/Add-New-TourGuide'}>
    <button className='btn'>Add New Tour Guide</button>
    </Link>
   </div>
    
     
-   
+  <Footer></Footer>
       </div>
     );
 };

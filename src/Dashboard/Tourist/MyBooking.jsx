@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import Footer from '../../../Footer/Footer';
 
 
 const MyBooking = () => {
     const {user} = useAuth()
     const axiosSecure = useAxiosSecure()
+    const [currentPage, setCurrentPage] = useState(1); 
+    const itemsPerPage = 10;
+
     const {data: touristForm = [], refetch} = useQuery({
         queryKey: ['touristForm',user?.email],
         queryFn: async () => {
@@ -37,19 +41,23 @@ const MyBooking = () => {
         axiosSecure.patch(`/touristForm/${id}`,{ status: "Accepted" })
         .then(res=>{
             console.log(res.data)
-            // if(res.data.modifiedCount > 0){
-            //     Swal.fire({
-            //         position: "top-end",
-            //         icon: "success",
-            //         title: `Booking was accepted by tour guide.`,
-            //         showConfirmButton: false,
-            //         timer: 1500
-            //       });
-                  
-            // }
+            if(res.data.modifiedCount > 0){
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: `Booking was accepted by tour guide.`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  });  
+            }
         })
-       
     }
+
+    const startPage = (currentPage - 1) * itemsPerPage;
+    const endPage = startPage + itemsPerPage;
+    const currentItems = touristForm.slice(startPage, endPage);
+    const totalPages = Math.ceil(touristForm.length / itemsPerPage);
+
     
     return (
         <div>
@@ -68,7 +76,7 @@ const MyBooking = () => {
     </thead>
     <tbody>
     {
-        touristForm.map((tourist,index)=><tr key={tourist._id}>
+        currentItems.map((tourist,index)=><tr key={tourist._id}>
         <th>{index+1}</th>
         <td>{tourist.tour_name}</td>
         <td>{tourist.guide}</td>
@@ -96,7 +104,27 @@ const MyBooking = () => {
     }
     </tbody>
             </table>
+            <div className="flex justify-between items-center mt-4">
+                    <button
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage((prev) => prev - 1)}
+                        className="btn btn-sm"
+                    >
+                        Previous
+                    </button>
+                    <span>
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage((prev) => prev + 1)}
+                        className="btn btn-sm"
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

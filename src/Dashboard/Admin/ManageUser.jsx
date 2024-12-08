@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
 import Select from "react-select";
+import Footer from "../../../Footer/Footer";
 
 
 
@@ -19,6 +20,8 @@ const ManageUser = () => {
   })
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRole, setSelectedRole] = useState("");
+  const [currentPage, setCurrentPage] = useState(1); 
+    const itemsPerPage = 10; 
 
 
   const roleOptions = [
@@ -34,6 +37,14 @@ const ManageUser = () => {
     const matchesRole = selectedRole ? user.role === selectedRole : true;
     return matchesSearch && matchesRole 
 });
+
+const currentUsers = filteredUsers.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+);
+
+const totalPages = Math.ceil(filteredUsers.length / itemsPerPage);
+
 const handleMenuOpen = () => {
   console.log("Dropdown menu opened!");
 };
@@ -121,7 +132,6 @@ const handleMenuOpen = () => {
            <h3>Total Users : {users.length}</h3>
            </div>
            <div className="flex gap-4 items-center justify-center">
-                {/* Search Input */}
                 <input
                     type="text"
                     placeholder="Search by Name/Email"
@@ -130,7 +140,6 @@ const handleMenuOpen = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                 />
 
-                {/* Role Filter */}
                 <Select
                     options={roleOptions}
                     defaultValue={roleOptions[0]}
@@ -175,7 +184,7 @@ const handleMenuOpen = () => {
             )}
            <h3 className="text-xl font-bold mb-4 mt-10 text-center">User Requests</h3>
            <div>
-  <table className="table table-zebra w-full">
+  <table className="table table-zebra w-full mb-4">
     {/* head */}
     <thead>
       <tr>
@@ -189,7 +198,7 @@ const handleMenuOpen = () => {
     
     <tbody>
      {
-        filteredUsers.map((user,index)=><tr key={user._id}>
+        currentUsers.map((user,index)=><tr key={user._id}>
             <th>{index+1}</th>
             <td>{user.name}</td>
             <td>{user.email}</td>
@@ -219,7 +228,27 @@ const handleMenuOpen = () => {
       
     </tbody>
   </table>
+  <div className="flex justify-between items-center mt-4">
+                    <button
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage((prev) => prev - 1)}
+                        className="btn btn-sm"
+                    >
+                        Previous
+                    </button>
+                    <span>
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage((prev) => prev + 1)}
+                        className="btn btn-sm"
+                    >
+                        Next
+                    </button>
+                </div>
 </div>
+<Footer></Footer>
         </div>
     );
 };

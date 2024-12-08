@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import Footer from '../../../Footer/Footer';
 
 const MyAssignedTour = () => {
     const {user} = useAuth()
     const axiosSecure = useAxiosSecure()
+    const [currentPage, setCurrentPage] = useState(1); 
+    const itemsPerPage = 10; 
+
     const {data: touristForm = [], refetch} = useQuery({
         queryKey: ['touristForm',user?.email],
         queryFn: async () => {
@@ -46,12 +50,18 @@ const MyAssignedTour = () => {
             }
         })
     }
+
+    const startPage = (currentPage - 1) * itemsPerPage;
+    const endPage = startPage + itemsPerPage;
+    const currentItems = touristForm.slice(startPage, endPage);
+    const totalPages = Math.ceil(touristForm.length / itemsPerPage);
+
     
     return (
         <div>
            
             <div>
-            <table className="table table-zebra w-full">
+            <table className="table table-zebra w-full mb-4">
             <thead>
       <tr>
         <th></th>
@@ -64,7 +74,7 @@ const MyAssignedTour = () => {
     </thead>
     <tbody>
     {
-        touristForm.map((tourist,index)=><tr key={tourist._id}>
+        currentItems.map((tourist,index)=><tr key={tourist._id}>
         <th>{index+1}</th>
         <td>{tourist.tour_name}</td>
         <td>{tourist.name}</td>
@@ -93,7 +103,27 @@ const MyAssignedTour = () => {
     }
     </tbody>
             </table>
+            <div className="flex justify-between items-center mt-4">
+                    <button
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage((prev) => prev - 1)}
+                        className="btn btn-sm"
+                    >
+                        Previous
+                    </button>
+                    <span>
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage((prev) => prev + 1)}
+                        className="btn btn-sm"
+                    >
+                        Next
+                    </button>
+                </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

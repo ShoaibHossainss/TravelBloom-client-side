@@ -3,6 +3,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
+import Footer from "../../../Footer/Footer";
 
 
 const RequestAdmin = () => {
@@ -48,7 +49,7 @@ const RequestAdmin = () => {
     };
 
     return (
-        <div>
+        <div className="mb-4">
         <h3>Request to Become a Tour Guide</h3>
         <button
             onClick={handleRequest}
@@ -57,6 +58,7 @@ const RequestAdmin = () => {
         >
             {isRequested ? 'Requested' : 'Request'}
         </button>
+        <Footer></Footer>
     </div>
     );
 };

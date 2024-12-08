@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
+import Footer from '../../../Footer/Footer';
+
 
 const MyWishlist = () => {
     const {user} = useAuth()
     const axiosSecure = useAxiosSecure()
     const navigate = useNavigate()
+    const [currentPage, setCurrentPage] = useState(1); 
+    const itemsPerPage = 10;
+
     const {data: wishlist = [], refetch} = useQuery({
         queryKey: ['wishlist',user?.email],
         queryFn: async () => {
@@ -46,13 +51,18 @@ const MyWishlist = () => {
            })
             }
           });
-
     }
+
+    const startPage = (currentPage - 1) * itemsPerPage;
+    const endPage = startPage + itemsPerPage;
+    const currentItems = touristForm.slice(startPage, endPage);
+    const totalPages = Math.ceil(touristForm.length / itemsPerPage);
+
     return (
         <div>
           
           <div>
-          <table className="table table-zebra w-full">
+          <table className="table table-zebra w-full mb-4">
             <thead>
       <tr>
         <th></th>
@@ -90,7 +100,27 @@ const MyWishlist = () => {
     }
     </tbody>
             </table>
+            <div className="flex justify-between items-center mt-4">
+                    <button
+                        disabled={currentPage === 1}
+                        onClick={() => setCurrentPage((prev) => prev - 1)}
+                        className="btn btn-sm"
+                    >
+                        Previous
+                    </button>
+                    <span>
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <button
+                        disabled={currentPage === totalPages}
+                        onClick={() => setCurrentPage((prev) => prev + 1)}
+                        className="btn btn-sm"
+                    >
+                        Next
+                    </button>
+                </div>
           </div>
+          <Footer></Footer>
         </div>
     );
 };

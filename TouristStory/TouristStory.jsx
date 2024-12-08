@@ -43,6 +43,7 @@ const TouristStory = () => {
       </div>
            
          </Link>
+         
         </div>
     );
 };

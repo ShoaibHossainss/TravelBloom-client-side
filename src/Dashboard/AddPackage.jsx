@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import Footer from "../../Footer/Footer";
 
 
 const AddPackage = () => {
@@ -56,7 +57,7 @@ const AddPackage = () => {
     return (
         <div>
         <h3 className="text-3xl text-center mt-6">Add Your Package Here</h3>
-        <form className="lg:mx-10" onSubmit={handleSubmit(onSubmit)}>
+        <form className="md:mx-10 pb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full mb-2">
         <div className="label">
         <span className="label-text">Category</span>
@@ -204,6 +205,7 @@ const AddPackage = () => {
         </div>
         <button className="btn flex mx-auto mt-4">Add Package</button>
         </form>
+        <Footer></Footer>
         </div>
     );
 };

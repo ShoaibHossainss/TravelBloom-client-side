@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Navbar from "../Pages/Navbar";
+import Footer from "../../Footer/Footer";
 
 
 const TourGuideDetails = () => {
@@ -56,7 +57,7 @@ const TourGuideDetails = () => {
         </div>
       </div>
       {/* review section */}
-      <div className="mx-auto justify-center items-center text-center mt-10">
+      <div className="mx-auto justify-center items-center text-center mt-10 mb-4">
       <h2 className="mb-2">Leave a Review</h2>
       {!user && <p>Please <Link to={"/login"}>
      <button className="btn">
@@ -120,6 +121,7 @@ const TourGuideDetails = () => {
       </form>
       }
         </div>
+        <Footer></Footer>
         </div>
     );
 };

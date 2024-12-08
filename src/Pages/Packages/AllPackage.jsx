@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Navbar";
+import Footer from "../../../Footer/Footer";
 
 
 
@@ -40,11 +41,12 @@ const AllPackage = () => {
                 </div>)
             }
            </div>
-           <div className="card-actions justify-center">
+           <div className="card-actions justify-center mb-4">
                   <Link to='/'>
       <button className="btn btn-primary">Go Back</button>
       </Link>
                 </div>
+                <Footer></Footer>
         </div>
     );
 };

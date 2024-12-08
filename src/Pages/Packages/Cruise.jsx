@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Navbar from "../Navbar";
+import Footer from "../../../Footer/Footer";
 
 
 
@@ -16,7 +18,8 @@ const Cruise = () => {
         })
     },[])
     return (
-        <div className="flex gap-4">
+        <div className="flex gap-4 mt-4 mb-4">
+          <Navbar></Navbar>
         {
             items.map(p=>
                 <div key={p._id} className="card bg-base-100 w-96 shadow-xl">
@@ -41,6 +44,7 @@ const Cruise = () => {
             </div>
             )
         }
+        <Footer></Footer>
     </div>
     );
 };
