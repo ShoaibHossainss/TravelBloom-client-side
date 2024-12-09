@@ -33,18 +33,11 @@ const PackageDetails = () => {
       email: guide?.email || "",
     });
   };
-  
-  
     const packages = useLoaderData();
-    // console.log(packages)
     const {id} = useParams();
    console.log(id)
- 
     const spot = packages.find(spot=>spot._id===id)
     console.log(spot)
-
-   
-
     const axiosPublicSpot =useAxiosPublic()
     const { data: touristSpot = [],  } = useQuery({
       queryKey: ['touristSpot'],
@@ -54,9 +47,6 @@ const PackageDetails = () => {
       }
   })
   console.log(touristSpot)
- 
- 
-   
     const axiosPublicTourGuide =useAxiosPublic()
     const { data: tourGuides = [],} = useQuery({
       queryKey: ['tourGuides'],
@@ -65,7 +55,6 @@ const PackageDetails = () => {
           return res.data;
       }
   })
-  
   const { register, handleSubmit, control } = useForm();
   const onSubmit = async data =>{
     console.log(data);
@@ -101,28 +90,20 @@ const PackageDetails = () => {
           .then(data=>{
             console.log(data)
             if(data.insertedId){
-              
                 Swal.fire({
                     title: "Added!",
                     text: "Your assignment has been added.",
                     icon: "success"
                   })
                   .then(() => {
-                    setIsModalOpen(true); // Open the modal only after success
-                  });;
-                  
-            }
-            
+                    setIsModalOpen(true); 
+                  });; 
+            }  
           })
-     
     }
   });
   }
-  
-  
- 
     return (
-     
     <div>
       <Navbar></Navbar>
         <div className="mx-auto lg:mt-8 md:mt-6 mt-4">
@@ -144,7 +125,6 @@ const PackageDetails = () => {
        <h2 className="text-4xl mb-4">About this tour</h2>
        <p className="p-2 text-lg">{spot.about}</p>
       </div>
-
       <div>
       <div className="collapse collapse-arrow bg-base-200 mt-6">
  <input type="radio" name="my-accordion-2" defaultChecked />
@@ -168,15 +148,11 @@ const PackageDetails = () => {
  </div>
 </div>
       </div>
-      
      </div>
 <div className="lg:mb-6 md:mb-5 mb-4 lg:mt-6 md:mt-5 mt-4">
   <h3 className="text-center mb-6">Lets look at our tour guides</h3>
   <TourGuide></TourGuide>
 </div>
-
-     {/* {book now} */}
-
 <div>
   <h3 className="mx-auto text-center mb-10">Here is your booking form</h3>
 <form className="mx-10" onSubmit={handleSubmit(onSubmit)}>
@@ -189,7 +165,6 @@ const PackageDetails = () => {
           )}
         </div>
       </div>
-
       <div className="lg:flex mb-2 gap-4">
         <div className="form-control w-full">
           <label>
@@ -220,7 +195,6 @@ const PackageDetails = () => {
           </label>
         </div>
       </div>
-
       <div className="lg:flex mb-2 gap-4">
         <div className="form-control w-full">
           <label>
@@ -251,7 +225,6 @@ const PackageDetails = () => {
           </label>
         </div>
       </div>
-
       <div className="lg:flex mb-2 gap-4">
         <div className="form-control w-full mb-2">
           <div className="label">
@@ -297,25 +270,22 @@ const PackageDetails = () => {
               name="date"
               control={control}
               rules={{ required: "Date is required" }}
-              defaultValue={null} // Ensure default value is null to avoid issues
+              defaultValue={null} 
               render={({ field: { onChange, value } }) => (
                 <DatePicker
-                  selected={value} // Bind value from form state
+                  selected={value} 
                   onChange={(date) => {
-                    // Format the date into YYYY-MM-DD and update form state
                     const formattedDate = date ? date.toISOString().split("T")[0] : null;
-                    onChange(formattedDate); // Pass formatted date to React Hook Form
+                    onChange(formattedDate); 
                   }}
                   className="input input-bordered w-full"
-                  dateFormat="yyyy-MM-dd" // Display the correct format in the input
+                  dateFormat="yyyy-MM-dd" 
                   placeholderText="YYYY-MM-DD"
                 />
               )}
             />
           </label>
-
         </div>
-
       <div>
   {
     user && !tourGuide && !admin ? (
@@ -326,8 +296,6 @@ const PackageDetails = () => {
         >
           Book Now
         </button>
-        
-        {/* Modal Logic */}
         {isModalOpen && (
           <div className="modal modal-open">
             <div className="modal-box">
@@ -349,7 +317,6 @@ const PackageDetails = () => {
       </>
     ) : 
     user && (tourGuide || admin) ? (
-      // User is an admin or tour guide
       <p className="text-center text-red-800 text-lg font-extrabold">
         You are not allowed to book any package. This option is eligible for tourists only.
       </p>

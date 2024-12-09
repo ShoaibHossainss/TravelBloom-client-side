@@ -14,9 +14,9 @@ const AllTouristStory = () => {
     return (
         <div>
             <Navbar></Navbar>
-           <div className="mx-auto grid grid-cols-3 gap-10 mt-10">
+           <div className="mx-auto grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-4 md:mt-10 mt-4">
            {
-                allStory.map(p=> <div key={p._id} className="card bg-base-100 w-96 shadow-xl">
+                allStory.map(p=> <div key={p._id} className="card bg-base-100 shadow-xl">
                     <figure>
                     <img className='relative'
                       src={p.imageUrl}
@@ -39,7 +39,7 @@ const AllTouristStory = () => {
                 </div>)
             }
            </div>
-           <div className="card-actions justify-center mb-4">
+           <div className="card-actions justify-center mb-4 mt-4">
                   <Link to='/'>
       <button className="btn btn-primary">Go Back</button>
       </Link>

@@ -24,9 +24,9 @@ const TouristStoryDetails = () => {
     return (
       <div>
         <Navbar></Navbar>
-        <div className="lg:flex lg:mt-10 md:mt-6 mt-4">
-          <div>
-            <img src={story.imageUrl} alt="" />
+        <div className="md:flex md:mt-10 mt-4">
+          <div > 
+            <img  className="rounded-2xl w-full" src={story.imageUrl} alt="" />
           </div>
 <div className="card-body">
 <h2 className="card-title">Type: {story.type}</h2>

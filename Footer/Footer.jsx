@@ -23,7 +23,7 @@ const Footer = () => {
           <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
         </aside>
         <nav>
-          <div className="md:flex mx-auto justify-center mt-4 gap-4">
+          <div className="flex mx-auto justify-center mt-4 gap-4">
             <a className="link link-hover">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

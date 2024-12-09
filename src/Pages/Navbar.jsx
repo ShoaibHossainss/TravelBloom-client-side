@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import useAdmin from "../hooks/useAdmin";
 import useTourGuide from "../hooks/useTourGuide";
+import logo from "../../src/assets/DALL·E 2024-12-10 02.30.58 - A modern and elegant logo design for a travel website named 'TravelBloom'. The logo features a blooming flower intertwined with a world globe, symboli.webp"
 
 
 
@@ -46,7 +47,7 @@ const handleLogOut = () =>{
 
    
 return (
-  <div className="navbar    bg-[#5c5146] mx-auto">
+  <div className="navbar bg-gradient-to-r from-teal-100 via-sky-50 to-lime-50 mx-auto">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,7 +57,10 @@ return (
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl text-green-500">StudyTogether</a>
+    <img className="w-[40px]" src={logo} alt=""  />
+    <a className="btn btn-ghost text-xl text-green-500">TravelBloom</a>
+    
+    
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

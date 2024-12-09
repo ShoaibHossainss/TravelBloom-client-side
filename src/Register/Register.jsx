@@ -60,7 +60,7 @@ const Register = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="hero bg-base-200 min-h-screen mt-4 mb-4">
+            <div className="hero min-h-screen mt-4 mb-4 bg-white">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Sign Up now!</h1>
@@ -68,13 +68,13 @@ const Register = () => {
                         Join us today and explore the amazing features we offer!
                     </p>
                 </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div className="card bg-white w-full max-w-sm shrink-0 shadow-lg border-gray-300 text-gray-800">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
-                            <input type="text" {...register("name", { required: true })} placeholder="Name" className="input input-bordered" />
+                            <input type="text" {...register("name", { required: true })} placeholder="Name" className="input input-bordered bg-gray-50" />
                             {errors.name && <span className="text-red-500">Name is required</span>}
                         </div>
 

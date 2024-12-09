@@ -14,7 +14,11 @@ const ManageUser = () => {
     const { data: users = [], refetch } = useQuery({
       queryKey: ['users'],
       queryFn: async () => {
-          const res = await axiosSecure.get('/users');
+          const res = await axiosSecure.get('/users',{
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('access-token')}`
+            }
+          });
           return res.data;
       }
   })
@@ -193,6 +197,7 @@ const handleMenuOpen = () => {
         <th>Email</th>
         <th>Role</th>
         <th>Action</th>
+        <th>Delete</th>
       </tr>
     </thead>
     
@@ -204,16 +209,15 @@ const handleMenuOpen = () => {
             <td>{user.email}</td>
             <td>
         {
-            user?.role === 'admin' ? 'Admin' : <button onClick={()=>handleMakeAdmin(user)} className="btn btn-xl bg-orange-500" disabled={user?.role === 'tourGuide'}>
-                
-            <FaUsers className="text-red-600"></FaUsers>
+            user?.role === 'admin' ? 'Admin' : <button onClick={()=>handleMakeAdmin(user)} className="btn btn-xl bg-orange-500" disabled={user?.role === 'tourGuide'}>   
+            Admin
         </button>
         }
             </td>
             <td>
         {
             user?.role === 'tourGuide' ? 'TourGuide' : <button onClick={()=>handleMakeTourGuide(user)} className="btn btn-xl bg-orange-500" disabled={user?.role === 'admin'}>
-            <FaUsers className="text-red-600"></FaUsers>
+            TourGuide
         </button>
         }
             </td>
@@ -240,7 +244,7 @@ const handleMenuOpen = () => {
                         Page {currentPage} of {totalPages}
                     </span>
                     <button
-                        disabled={currentPage === totalPages}
+                        disabled={currentPage === totalPages || totalPages === 0}
                         onClick={() => setCurrentPage((prev) => prev + 1)}
                         className="btn btn-sm"
                     >

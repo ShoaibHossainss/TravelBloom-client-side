@@ -2,6 +2,7 @@ import { createContext,useEffect,useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithPopup, signOut, updateProfile, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../../firebase.config";
 import useAxiosPublic from "../hooks/useAxiosPublic";
+import axios from "axios";
 
 
 
@@ -44,8 +45,20 @@ const AuthProvider = ({children}) => {
       const unSubscribe = onAuthStateChanged(auth, currentUser => {
         console.log('wprrled',currentUser)
         setUser(currentUser);
-        setLoading(false);
-        
+       if(currentUser){
+          const userInfo = {email : currentUser?.email}
+          axiosPublic.post('/jwt',userInfo)
+          .then(res=>{
+            if(res.data.token){
+                localStorage.setItem('access-token', res.data.token)
+            }
+          })
+       }
+       else{
+         localStorage.removeItem('access-token')
+         
+       }
+       setLoading(false);
       });
       return () => {
         unSubscribe()

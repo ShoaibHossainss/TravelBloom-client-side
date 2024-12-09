@@ -116,7 +116,7 @@ const MyBooking = () => {
                         Page {currentPage} of {totalPages}
                     </span>
                     <button
-                        disabled={currentPage === totalPages}
+                        disabled={currentPage === totalPages || totalPages === 0}
                         onClick={() => setCurrentPage((prev) => prev + 1)}
                         className="btn btn-sm"
                     >

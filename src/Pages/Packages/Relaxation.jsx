@@ -17,11 +17,12 @@ const Relaxation = () => {
         })
     },[])
     return (
-        <div className="flex gap-4 mt-4 mb-4">
+        <div>
           <Navbar></Navbar>
-        {
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mt-4 mb-4 mx-auto justify-center">
+          {
             items.map(p=>
-                <div key={p._id} className="card bg-base-100 w-96 shadow-xl">
+                <div key={p._id} className="card bg-base-100 shadow-xl">
                 <figure>
                 <img className='relative'
                   src={p.primary_image}
@@ -43,6 +44,7 @@ const Relaxation = () => {
             </div>
             )
         }
+          </div>
         <Footer></Footer>
     </div>
     );

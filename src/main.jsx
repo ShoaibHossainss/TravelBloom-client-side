@@ -11,7 +11,6 @@ import { QueryClient, QueryClientProvider} from '@tanstack/react-query';
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
-  // className='bg-teal-500 lg:w-[1330px]  md:w-full w-full mx-auto'
   <div className='bg-gradient-to-r from-teal-300 via-sky-200 to-lime-100 md:w-[1330px] w-full mx-auto'>
     <StrictMode>
     <AuthProvider>

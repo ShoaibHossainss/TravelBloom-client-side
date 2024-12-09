@@ -47,7 +47,7 @@ const RequestAdmin = () => {
                 });
             });
     };
-
+console.log(isRequested)
     return (
         <div className="mb-4">
         <h3>Request to Become a Tour Guide</h3>

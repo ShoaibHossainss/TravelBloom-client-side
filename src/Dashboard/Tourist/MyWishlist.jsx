@@ -55,8 +55,8 @@ const MyWishlist = () => {
 
     const startPage = (currentPage - 1) * itemsPerPage;
     const endPage = startPage + itemsPerPage;
-    const currentItems = touristForm.slice(startPage, endPage);
-    const totalPages = Math.ceil(touristForm.length / itemsPerPage);
+    const currentItems = wishlist.slice(startPage, endPage);
+    const totalPages = Math.ceil(wishlist.length / itemsPerPage);
 
     return (
         <div>
@@ -74,7 +74,7 @@ const MyWishlist = () => {
     </thead>
     <tbody>
     {
-        wishlist.map((tourist,index)=><tr key={tourist._id}>
+        currentItems.map((tourist,index)=><tr key={tourist._id}>
         <th>{index+1}</th>
         <td>{tourist.tour_type}</td>
         <td>{tourist.trip_title}</td>
@@ -101,24 +101,24 @@ const MyWishlist = () => {
     </tbody>
             </table>
             <div className="flex justify-between items-center mt-4">
-                    <button
-                        disabled={currentPage === 1}
-                        onClick={() => setCurrentPage((prev) => prev - 1)}
-                        className="btn btn-sm"
-                    >
-                        Previous
-                    </button>
-                    <span>
-                        Page {currentPage} of {totalPages}
-                    </span>
-                    <button
-                        disabled={currentPage === totalPages}
-                        onClick={() => setCurrentPage((prev) => prev + 1)}
-                        className="btn btn-sm"
-                    >
-                        Next
-                    </button>
-                </div>
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+            className="btn btn-sm"
+          >
+            Previous
+          </button>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            disabled={currentPage === totalPages || totalPages === 0}
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+            className="btn btn-sm"
+          >
+            Next
+          </button>
+        </div>
           </div>
           <Footer></Footer>
         </div>

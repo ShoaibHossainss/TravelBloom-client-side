@@ -1,18 +1,29 @@
-import { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../src/hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 
 const TouristStory = () => {
-    const [touristStory,setTouristStory] = useState([]);
-    useEffect(()=>{
-        fetch('https://assignment-12-server-lac-ten.vercel.app/touristStory')
-        .then(res=>res.json())
-        .then(data=>setTouristStory(data))
-    },[])
-    console.log(touristStory)
+    // const [touristStory,setTouristStory] = useState([]);
+    // useEffect(()=>{
+    //     fetch('https://assignment-12-server-lac-ten.vercel.app/touristStory')
+    //     .then(res=>res.json())
+    //     .then(data=>setTouristStory(data))
+    // },[])
+    // console.log(touristStory)
+
+    const axiosPublic = useAxiosPublic()
+    const {data: touristStory=[],} = useQuery({
+      queryKey: ['touristStory'],
+      queryFn: async () => {
+        const res = await axiosPublic.get('/touristStory')
+        return res.data
+      }
+    })
     return (
         <div>
-              <div className="mx-auto lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-6">
+              <div className="mx-auto md:ml-8 grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-4">
         {
           touristStory.map(p=>
             <Link to={`/touristStory-details/${p._id}`} key={p._id}>
