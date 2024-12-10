@@ -58,9 +58,8 @@ return (
       </ul>
     </div>
     <img className="w-[40px]" src={logo} alt=""  />
-    <a className="btn btn-ghost text-xl text-green-500">TravelBloom</a>
-    
-    
+    <Link to={'/'}>
+    <a className="btn btn-ghost text-xl text-green-500">TravelBloom</a></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

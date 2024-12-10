@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Footer from "../../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const AddPackage = () => {
@@ -56,6 +57,9 @@ const AddPackage = () => {
     } 
     return (
         <div>
+          <Helmet>
+                <title>Add Package</title>
+            </Helmet>
         <h3 className="text-3xl text-center mt-6">Add Your Package Here</h3>
         <form className="md:mx-10 pb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full mb-2">

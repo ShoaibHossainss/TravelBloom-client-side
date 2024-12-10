@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Footer from "../../Footer/Footer";
 import Navbar from "../Pages/Navbar";
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
@@ -59,15 +60,17 @@ const Register = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Register</title>
+            </Helmet>
             <Navbar></Navbar>
-            <div className="hero min-h-screen mt-4 mb-4 bg-white">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Sign Up now!</h1>
-                    <p className="py-6">
-                        Join us today and explore the amazing features we offer!
-                    </p>
-                </div>
+            <div className="hero min-h-screen mt-4 mb-4">
+            <div>
+            <h2 className="text-center text-lg mb-6 mt-4 text-lime-700">
+  Sign up today to unlock exclusive travel features. <br />
+  Start your adventure with us and explore the world!
+</h2>
+
                 <div className="card bg-white w-full max-w-sm shrink-0 shadow-lg border-gray-300 text-gray-800">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
@@ -82,7 +85,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Photo URL</span>
                             </label>
-                            <input type="text" {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered" />
+                            <input type="text" {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered bg-gray-50" />
                             {errors.photoURL && <span className="text-red-500">Photo URL is required</span>}
                         </div>
 
@@ -90,7 +93,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" {...register("email", { required: true })} placeholder="Email" className="input input-bordered" />
+                            <input type="email" {...register("email", { required: true })} placeholder="Email" className="input input-bordered bg-gray-50" />
                             {errors.email && <span className="text-red-500">Email is required</span>}
                         </div>
 
@@ -103,7 +106,7 @@ const Register = () => {
                                 minLength: 6,
                                 maxLength: 20,
                                 pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
-                            })} placeholder="Password" className="input input-bordered" />
+                            })} placeholder="Password" className="input input-bordered bg-gray-50" />
                             {errors.password?.type === "minLength" && (
                                 <p className="text-red-500">Password must be at least 6 characters</p>
                             )}
@@ -122,7 +125,7 @@ const Register = () => {
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
                     </form>
-                    <p><small>Already have an account? <Link to='/login'>Login Here</Link></small></p>
+                    <p className="text-center text-xl mb-2"><small>Already have an account? <Link to='/login'><button className="btn btn-primary mx-2">Login</button></Link>Here</small></p>
                 </div>
             </div>
             

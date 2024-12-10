@@ -3,6 +3,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Navbar from "../Pages/Navbar";
 import Footer from "../../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const TourGuideDetails = () => {
@@ -32,6 +33,9 @@ const TourGuideDetails = () => {
     };
     return (
         <div>
+          <Helmet>
+                <title>TourGuide Details</title>
+            </Helmet>
           <Navbar></Navbar>
              <div className="lg:flex md:flex lg:mt-10 md:mt-8 mt-4">
           <div className="lg:w-1/2 md:w-1/2">

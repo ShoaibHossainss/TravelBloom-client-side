@@ -5,19 +5,24 @@ import Swal from "sweetalert2";
 import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from "react-simple-captcha";
 import Footer from "../../../Footer/Footer";
 import Navbar from "../Navbar";
+import { Helmet } from "react-helmet-async";
+import { FaGoogle } from "react-icons/fa";
+import SocialLogin from "./SocialLogin";
+
 
 
 const Login = () => {
     
     const [disabled,setDisabled] = useState(true);
-
     const {signIn} = useContext(AuthContext)
     const navigate = useNavigate();
     const location = useLocation();
+
     const from = location.state?.from?.pathname || '/';
  useEffect(()=>{
     loadCaptchaEnginge(6); 
  },[])
+
     const handleLogin = event => {
         event.preventDefault()
         const form = event.target;
@@ -64,29 +69,30 @@ const Login = () => {
      
       
        <div>
+        <Helmet>
+                <title>Login</title>
+            </Helmet>
         <Navbar></Navbar>
-         <div className="hero bg-base-200 min-h-screen mt-4 mb-4">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center md:w-1/2 lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-              quasi. In deleniti eaque aut repudiandae et a id nisi.
-            </p>
-          </div>
-          <div className="card bg-base-100 md:w-1/2 max-w-sm  shadow-2xl">
+         <div className="hero min-h-screen mt-4 mb-2">
+        <div className=" flex-col">
+        <h2 className="text-center text-lg mb-6 mt-4 text-lime-700">
+  Welcome back! Log in to continue your journey. <br />
+  Access your account and explore new destinations.
+</h2>
+
+          <div className="card bg-base-100  max-w-sm  shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                <input type="email" name="email" placeholder="email" className="input input-bordered bg-gray-50" required />
               </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
-                <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                <input type="password" name="password" placeholder="password" className="input input-bordered bg-gray-50" required />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
@@ -95,7 +101,7 @@ const Login = () => {
                 <label className="label">
                 <LoadCanvasTemplate />
                 </label>
-                <input type="text" onBlur={handleValidate} name="captcha" placeholder="enter your captcha" className="input input-bordered" required />
+                <input type="text" onBlur={handleValidate} name="captcha" placeholder="enter your captcha" className="input input-bordered bg-gray-50" required />
                
               </div>
               <div className="form-control mt-6">
@@ -103,14 +109,12 @@ const Login = () => {
               </div>
               
             </form>
-            <p><small>New here? <Link to='/register'>Create Account</Link></small></p>
-            
+            <div className="text-center items-center mx-auto justify-center">
+            <SocialLogin></SocialLogin>
+            </div>
+            <p className="text-center text-xl mb-4"><small>New here? <Link to='/register'><button className="btn btn-primary">Create Account</button></Link></small></p>
           </div>
-
-         
-          
         </div>
-       
       </div>
       <Footer></Footer>
        </div>

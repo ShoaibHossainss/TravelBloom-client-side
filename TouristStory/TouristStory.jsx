@@ -23,11 +23,18 @@ const TouristStory = () => {
     })
     return (
         <div>
+          <h1 className="text-3xl text-center mb-2">Tourist Story Section</h1>
+          <h3 className="text-center text-xl mb-6 text-lime-700">
+  Every journey has a story, and every story deserves to be shared. <br />
+  In this section, explore firsthand experiences of travelers who have ventured into the heart of Bangladesh. <br />
+  From thrilling adventures in the Sundarbans to serene moments on the beaches of Cox’s Bazar, these stories capture the essence of discovery, culture, and unforgettable memories.
+</h3>
+
               <div className="mx-auto md:ml-8 grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-4">
         {
           touristStory.map(p=>
             <Link to={`/touristStory-details/${p._id}`} key={p._id}>
-              <div  className="card bg-base-100 mb-4 shadow-xl">
+              <div  className="card bg-base-100 mb-4 shadow-xl hover:bg-teal-200">
         <figure>
         <img className='relative'
           src={p.imageUrl}

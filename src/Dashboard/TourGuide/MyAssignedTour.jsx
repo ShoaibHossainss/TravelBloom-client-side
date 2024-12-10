@@ -4,6 +4,7 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import Footer from '../../../Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const MyAssignedTour = () => {
     const {user} = useAuth()
@@ -59,7 +60,9 @@ const MyAssignedTour = () => {
     
     return (
         <div>
-           
+           <Helmet>
+                <title>My Assigned Tour</title>
+            </Helmet>
             <div>
             <table className="table table-zebra w-full mb-4">
             <thead>

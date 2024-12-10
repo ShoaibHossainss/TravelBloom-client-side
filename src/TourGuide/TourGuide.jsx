@@ -12,10 +12,16 @@ const TourGuide = () => {
     },[])
     console.log(tourGuide)
     return (
-        <div className="lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto lg:gap-6 ">
+      <div>
+        <h3 className="text-center text-xl mb-6 text-lime-700">
+  Meet the heart of our travel experience – our expert tour guides. <br />
+  Passionate about sharing the wonders of Bangladesh, they bring the country’s rich history to life. <br />
+  Let them lead you through the beauty of Bangladesh with local insights and a personalized touch.
+        </h3>
+         <div className="lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto lg:gap-6 ">
           {
             tourGuide.map(p=>
-                <div key={p._id} className="card lg:w-96 md:w-96 bg-base-100 shadow-xl mb-4">
+                <div key={p._id} className="card lg:w-96 md:w-96 bg-base-100 shadow-xl mb-4 hover:bg-teal-200">
           <figure>
           <img className='relative'
             src={p.profilePicture}
@@ -37,6 +43,8 @@ const TourGuide = () => {
             )
           }  
         </div>
+      </div>
+       
     );
 };
 

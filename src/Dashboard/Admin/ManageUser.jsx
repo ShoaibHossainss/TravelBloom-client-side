@@ -6,6 +6,7 @@ import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
 import Select from "react-select";
 import Footer from "../../../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -16,12 +17,13 @@ const ManageUser = () => {
       queryFn: async () => {
           const res = await axiosSecure.get('/users',{
             headers: {
-                authorization: `Bearer ${localStorage.getItem('access-token')}`
-            }
+                Authorization: `Bearer ${localStorage.getItem('access-token')}`
+              }             
           });
           return res.data;
-      }
+      } 
   })
+  console.log('JWT Token:', localStorage.getItem('access-token')); 
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedRole, setSelectedRole] = useState("");
   const [currentPage, setCurrentPage] = useState(1); 
@@ -132,6 +134,9 @@ const handleMenuOpen = () => {
     const tourGuideRequests = users.filter((user) => user.role === "requested");
     return (
         <div className="w-full">
+            <Helmet>
+                <title>Manage User</title>
+            </Helmet>
            <div className="flex justify-evenly py-8">
            <h3>Total Users : {users.length}</h3>
            </div>

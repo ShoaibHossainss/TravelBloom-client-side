@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 import Footer from '../../../Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 
 const MyWishlist = () => {
@@ -60,7 +61,9 @@ const MyWishlist = () => {
 
     return (
         <div>
-          
+          <Helmet>
+                <title>My Wishlist</title>
+            </Helmet>
           <div>
           <table className="table table-zebra w-full mb-4">
             <thead>

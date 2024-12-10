@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import Navbar from "../Pages/Navbar";
 import Footer from "../../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const AddNewTourGuide = () => {
@@ -57,6 +58,9 @@ const AddNewTourGuide = () => {
     } 
     return (
         <div>
+          <Helmet>
+                <title>Add TourGuide</title>
+            </Helmet>
           <Navbar></Navbar>
         <h3 className="text-3xl text-center mt-6">Add New Tour Guide Here</h3>
         <form className="mx-10 mb-4" onSubmit={handleSubmit(onSubmit)}>

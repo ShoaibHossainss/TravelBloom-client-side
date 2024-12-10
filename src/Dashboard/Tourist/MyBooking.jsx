@@ -4,6 +4,7 @@ import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
 import Footer from '../../../Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 
 const MyBooking = () => {
@@ -61,7 +62,9 @@ const MyBooking = () => {
     
     return (
         <div>
-            
+            <Helmet>
+                <title>My Booking</title>
+            </Helmet>
             <div>
             <table className="table table-zebra w-full">
             <thead>

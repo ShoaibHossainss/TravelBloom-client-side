@@ -16,6 +16,7 @@ import useTourGuide from "../../hooks/useTourGuide";
 import useAdmin from "../../hooks/useAdmin";
 import Navbar from "../Navbar";
 import Footer from "../../../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const PackageDetails = () => {
@@ -105,6 +106,9 @@ const PackageDetails = () => {
   }
     return (
     <div>
+      <Helmet>
+                <title>Package Details</title>
+            </Helmet>
       <Navbar></Navbar>
         <div className="mx-auto lg:mt-8 md:mt-6 mt-4">
       <div className="flex w-10/12 items-center mx-auto gap-4">

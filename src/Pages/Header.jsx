@@ -8,9 +8,14 @@ import image6 from '../assets/fotor-ai-2024082918179.jpg'
 const Header = () => {
     return (
         <div>
-        <h3 className="text-center mt-4 mb-4 text-2xl ">Look At Some Wonderful
-        <br />
-        Study Places</h3>
+          <h1 className="text-3xl text-center mb-2 mt-4">
+            Banner Section
+          </h1>
+        <h3 className="text-center text-xl mb-6 text-lime-700">
+        Experience the beauty and diversity of Bangladesh through a captivating visual journey.<br />
+  Our header section showcases a stunning collection of images, from serene landscapes and bustling cityscapes<br />
+  to hidden gems and cultural landmarks. Each slide invites you to discover the unique charm of this enchanting destination.
+        </h3>
        <div className="carousel w-full rounded-2xl">
 <div id="slide1" className="carousel-item relative w-full">
 <img src={image1} className="w-full" />

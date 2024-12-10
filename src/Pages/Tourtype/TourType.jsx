@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import image1 from '../../assets/Firefly adventure 73216.jpg'
-import image2 from '../../assets/Firefly Historical Tour of Ancient Rome 7759.jpg'
-import image3 from '../../assets/Firefly Luxury Spa Retreat in Bali- 67717.jpg'
-import image4 from '../../assets/Firefly African Safari Adventure 66097.jpg'
-import image5 from '../../assets/Firefly Mediterranean Cruise Experience 99504.jpg'
-import image6 from '../../assets/Firefly Amazon Rainforest Expedition 39528.jpg'
+import image1 from '../../assets/fotor-ai-2024121017350.jpg'
+import image2 from '../../assets/fotor-ai-20241210174415.jpg'
+import image3 from '../../assets/fotor-ai-20241210174025.jpg'
+import image4 from '../../assets/fotor-ai-20241210174628.jpg'
+import image5 from '../../assets/fotor-ai-20241210174530.jpg'
+import image6 from '../../assets/fotor-ai-2024121017390.jpg'
 
 
 const TourType = () => {
@@ -12,14 +12,16 @@ const TourType = () => {
    
    
     return (
-        <div className="lg:mt-10 md:mt-8 mt-4">
-            <h3 className="text-center">Look at our packages and
-                <br />
-                <span>browse your favorite ones</span>
-            </h3>
+        <div className="md:mt-8 mt-4">
+            <h3 className="text-3xl text-center mb-2">Tour Type Section</h3>
+            <h3 className="text-center text-xl text-lime-700">
+    Discover Your Perfect Journey<br />
+    Embark on a journey tailored just for you! Our diverse travel packages offer something for every type of explorer.<br />
+    Let us help you find the perfect package for your dream getaway!
+</h3>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-6 md:gap-4 mx-auto lg:p-4 lg:mt-8 md:mt-6 mt-4">
             <div className="text-center">
-                <img className="opacity-90"  src={image1} alt="" />
+                <img className="opacity-90 rounded-2xl"  src={image1} alt="" />
                <Link to='/adventure'>
                <button className="btn px-4 pb-1 bg-green-500 -translate-y-12 text-2xl border-none">
                 Adventure
@@ -27,15 +29,15 @@ const TourType = () => {
                 </Link>
                 </div>
             <div className="text-center">
-                <img className="opacity-90"  src={image2} alt="" />
+                <img className="opacity-90 rounded-2xl"  src={image2} alt="" />
                 <Link to='/cultural'>
                <button className="btn px-4 pb-1 bg-green-500 -translate-y-12 text-2xl border-none">
                Cultural
                 </button>
                 </Link>
                 </div>
-            <div className="text-center">
-                <img className="opacity-90"  src={image3} alt="" />
+            <div className="text-center"> 
+                <img className="opacity-90 rounded-2xl"  src={image3} alt="" />
                 <Link to='/relaxation'>
                <button className="btn px-4 pb-1 bg-green-500 -translate-y-12 text-2xl border-none">
                Relaxation
@@ -43,7 +45,7 @@ const TourType = () => {
                 </Link>
                 </div>
             <div className="text-center">
-                <img className="opacity-90"  src={image4} alt="" />
+                <img className="opacity-90 rounded-2xl"   src={image4} alt="" />
                 <Link to='/wildlife'>
                <button className="btn px-4 pb-1 bg-green-500 -translate-y-12 text-2xl border-none">
                Wildlife
@@ -51,7 +53,7 @@ const TourType = () => {
                 </Link>
                 </div>
             <div className="text-center">
-                <img className="opacity-90"  src={image5} alt="" />
+                <img className="opacity-90 rounded-2xl"  src={image5} alt="" />
                 <Link to='/cruise'>
                <button className="btn px-4 pb-1 bg-green-500 -translate-y-12 text-2xl border-none">
                Cruise
@@ -59,7 +61,7 @@ const TourType = () => {
                 </Link>
                 </div>
             <div className="text-center">
-                <img className="opacity-90"  src={image6} alt="" />
+                <img className="opacity-90 rounded-2xl"  src={image6} alt="" />
                 <Link to='/eco-tourism'>
                <button className="btn px-4 pb-1 bg-green-500 -translate-y-12 text-2xl border-none">
                Eco-Tourism

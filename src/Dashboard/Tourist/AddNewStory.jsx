@@ -1,4 +1,5 @@
 import DatePicker from "react-datepicker";
+import { Helmet } from "react-helmet-async";
 import { Controller, useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
@@ -54,6 +55,9 @@ const AddNewStory = () => {
     }
     return (
         <div>
+          <Helmet>
+                <title>Add Story</title>
+            </Helmet>
             <h3 className="text-3xl text-center mt-6">Add New Story Here</h3>
             <form className="mx-10" onSubmit={handleSubmit(onSubmit)}>
             <div className='lg:flex mb-2 gap-4'>

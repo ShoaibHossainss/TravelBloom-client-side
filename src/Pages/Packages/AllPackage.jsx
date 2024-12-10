@@ -3,6 +3,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../Navbar";
 import Footer from "../../../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -16,10 +17,13 @@ const AllPackage = () => {
     return (
         
         <div>
+          <Helmet>
+                <title>All Packages</title>
+            </Helmet>
             <Navbar></Navbar>
            <div className="grid md:grid-cols-3 grid-cols-1 mx-auto w-full md:gap-10 md:mt-10 mt-4 gap-4">
            {
-                allPackage.map(p=> <div key={p._id} className="card bg-base-100 mb-4 shadow-xl">
+                allPackage.map(p=> <div key={p._id} className="card bg-base-100 mb-4 shadow-xl hover:bg-teal-200">
                     <figure>
                     <img className='relative'
                       src={p.primary_image}

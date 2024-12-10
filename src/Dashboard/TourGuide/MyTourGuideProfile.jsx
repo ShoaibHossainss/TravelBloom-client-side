@@ -2,11 +2,15 @@ import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import { Link } from 'react-router-dom';
 import Footer from '../../../Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const MyTourGuideProfile = () => {
     const {user} = useAuth()
     return (
         <div>
+          <Helmet>
+                <title>TourGuide Profile</title>
+            </Helmet>
         <div className="avatar flex mx-auto items-center justify-center text-center">
      <div className="w-24 rounded-full">
      {user?.photoURL? <img src={user?.photoURL} alt=""  /> : 

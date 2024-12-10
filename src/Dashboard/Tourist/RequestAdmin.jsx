@@ -4,6 +4,7 @@ import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import Footer from "../../../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const RequestAdmin = () => {
@@ -50,6 +51,9 @@ const RequestAdmin = () => {
 console.log(isRequested)
     return (
         <div className="mb-4">
+            <Helmet>
+                <title>Request Admin</title>
+            </Helmet>
         <h3>Request to Become a Tour Guide</h3>
         <button
             onClick={handleRequest}

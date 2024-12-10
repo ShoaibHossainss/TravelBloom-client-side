@@ -6,6 +6,7 @@ import useAdmin from "../src/hooks/useAdmin";
 import useTourGuide from "../src/hooks/useTourGuide";
 import Navbar from "../src/Pages/Navbar";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -23,6 +24,9 @@ const TouristStoryDetails = () => {
    
     return (
       <div>
+        <Helmet>
+                <title>Story Details</title>
+            </Helmet>
         <Navbar></Navbar>
         <div className="md:flex md:mt-10 mt-4">
           <div > 

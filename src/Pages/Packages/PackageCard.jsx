@@ -13,11 +13,12 @@ const PackageCard = () => {
     },[])
     return (
         <div>
-            <h3 className="text-center mt-4 mb-4 text-2xl ">Here some of our tourism packages
-                <br />
-                <span>Visit and choose yours</span>
-            </h3>
-        <div className="mx-auto lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-6 ">
+            <h3 className="text-center text-xl text-lime-700 mb-6">
+  Explore our exclusive travel packages designed to offer you the best experiences in Bangladesh. <br />
+  Whether you're seeking thrilling adventures or relaxing retreats, we have something for every traveler. <br />
+  Choose a package and embark on an extraordinary journey with us.
+</h3>
+        <div className="mx-auto md:ml-8 grid md:grid-cols-3 grid-cols-1 md:gap-6 ">
         {
             spots.map(spot=><Spot key={spot.id} spot={spot}></Spot>)
         }

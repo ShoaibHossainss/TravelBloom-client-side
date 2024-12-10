@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../src/Pages/Navbar";
 import { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const AllTouristStory = () => {
@@ -13,10 +14,13 @@ const AllTouristStory = () => {
       console.log(touristStory)
     return (
         <div>
+          <Helmet>
+                <title>All Story</title>
+            </Helmet>
             <Navbar></Navbar>
            <div className="mx-auto grid md:grid-cols-3 grid-cols-1 md:gap-10 gap-4 md:mt-10 mt-4">
            {
-                allStory.map(p=> <div key={p._id} className="card bg-base-100 shadow-xl">
+                allStory.map(p=> <div key={p._id} className="card bg-base-100 shadow-xl hover:bg-teal-200">
                     <figure>
                     <img className='relative'
                       src={p.imageUrl}

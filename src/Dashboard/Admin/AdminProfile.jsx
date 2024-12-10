@@ -1,11 +1,15 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth';
 import Footer from '../../../Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 const AdminProfile = () => {
     const {user} = useAuth()
     return (
       <div>
+        <Helmet>
+                <title>Admin Profile</title>
+            </Helmet>
         <div className="avatar flex mx-auto items-center justify-center text-center">
 <div className="w-24 rounded-full">
 {user?.photoURL? <img src={user?.photoURL} alt=""  /> : 
