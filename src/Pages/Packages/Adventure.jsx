@@ -8,6 +8,26 @@ import { Helmet } from "react-helmet-async";
 
 const Adventure = () => {
     const [items,setItem] = useState([]);
+    const [bounceStyle, setBounceStyle] = useState({});
+
+    useEffect(() => {
+     const interval = setInterval(() => {
+       setBounceStyle({
+         transform: "rotateY(15deg)",
+         transition: "transform 0.5s ease-in-out",
+       });
+ 
+       setTimeout(() => {
+         setBounceStyle({
+           transform: "rotateY(0deg)",
+           transition: "transform 0.5s ease-in-out",
+         });
+       }, 600);
+     }, 2500);
+ 
+     return () => clearInterval(interval);
+   }, []);
+ 
     
     useEffect(()=>{
         fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot')
@@ -28,32 +48,37 @@ const Adventure = () => {
           <Navbar></Navbar>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mt-4 mb-4 mx-auto justify-center">
           {
-                items.map(p=>
-                    <div key={p._id} className="card bg-base-100 shadow-xl hover:bg-teal-200">
-                    <figure>
-                    <img className='relative'
-                      src={p.primary_image}
-                      alt="Shoes"/>
-                    </figure>
-                  <div className="card-body">
-                  <h2 className="card-title">Type: {p.tour_type}</h2>
-                    <p>Title: {p.trip_title}</p>
-                    <p>Price: {p.price}</p>
-                    <div className="card-actions flex gap-4">
-                    <Link to={`/package-details/${p._id}`}>
-                  <button className="btn btn-primary">View Package</button>
-                  </Link>
-                  <Link to='/'>
-      <button className="btn btn-primary">Go Back</button>
-      </Link>
-                </div>
-                  </div>
-                </div>
-                )
-            }
+            items.map(p=>
+                <div key={p._id} style={bounceStyle} className="card bg-base-100 bg-gradient-to-bl from-orange-200 via-yellow-300 to-pink-200 shadow-xl text-yellow-800 hover:bg-teal-200 mb-6 dark:bg-gradient-to-bl dark:from-gray-800 dark:via-gray-900 dark:to-black dark:text-yellow-300">
+                <figure>
+                <img className='relative'
+                  src={p.primary_image}
+                  alt="Shoes"/>
+                </figure>
+                <div className="card-body">
+  <h2 className="card-title text-rose-800 hover:text-pink-900">Type: {p.tour_type}</h2>
+  <p className="text-pink-800 hover:text-orange-900">Title: {p.trip_title}</p>
+  <p className="text-orange-800 hover:text-red-700">Price: {p.price}</p>
+  <div className="card-actions">
+    <Link to={`/package-details/${p._id}`}>
+      <button className="btn btn-primary text-white bg-orange-500 hover:bg-orange-600 border-none">
+        View Package
+      </button>
+    </Link>
+  </div>
+</div>
+
+            </div>
+            )
+        }
           </div>
-          
-            
+          <Link to='/'>
+          <div className="flex justify-center">
+          <button className="btn btn-primary text-white bg-orange-500 hover:bg-orange-600 border-none">
+        Go Back
+      </button>
+          </div>
+    </Link>
             <Footer></Footer>
         </div>
     );

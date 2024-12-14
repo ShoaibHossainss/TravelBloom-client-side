@@ -12,9 +12,9 @@ const TourType = () => {
    
    
     return (
-        <div className="md:mt-8 mt-4">
+        <div className="md:mt-8 mt-4 dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white">
             <h3 className="text-3xl text-center mb-2">Tour Type Section</h3>
-            <h3 className="text-center text-xl text-lime-700">
+            <h3 className="text-center text-xl text-lime-700 dark:text-lime-300">
     Discover Your Perfect Journey<br />
     Embark on a journey tailored just for you! Our diverse travel packages offer something for every type of explorer.<br />
     Let us help you find the perfect package for your dream getaway!

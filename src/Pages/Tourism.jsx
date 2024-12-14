@@ -6,7 +6,7 @@ import TourGuide from '../TourGuide/TourGuide';
 
 const Tourism = () => {
     return (
-      <div className='md:mt-10 mt-4'>
+      <div className='md:mt-10 mt-4 dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white'>
         <h3 className="text-3xl text-center mb-2">Tourism and Travel Guide Section</h3>
       <Tabs>
 <TabList>
@@ -17,7 +17,7 @@ const Tourism = () => {
 </TabList>
 <TabPanel>
 <div>
-  <h3 className="text-center text-xl mb-6 text-lime-700">
+  <h3 className="text-center text-xl mb-6 text-lime-700 dark:text-lime-300">
   Take a closer look at the wonders of Bangladesh in our overview section. <br />
   This featured video offers a glimpse into the vibrant culture, breathtaking landscapes, and rich heritage of this remarkable country. <br />
   Whether you're planning your first visit or reminiscing about past travels, let this visual journey inspire and captivate you.

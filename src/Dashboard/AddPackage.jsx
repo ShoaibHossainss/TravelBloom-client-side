@@ -73,6 +73,7 @@ const AddPackage = () => {
         <option value="Relaxation">Relaxation</option>
         <option value="Wildlife">Wildlife</option>
         <option value="Cruise">Cruise</option>
+        <option value="Eco-tourism">Eco-Tourism</option>
         </select>
         </div>
         <div className='lg:flex mb-2 gap-4'>

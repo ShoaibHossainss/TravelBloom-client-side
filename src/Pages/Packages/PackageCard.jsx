@@ -13,7 +13,7 @@ const PackageCard = () => {
     },[])
     return (
         <div>
-            <h3 className="text-center text-xl text-lime-700 mb-6">
+            <h3 className="text-center text-xl text-lime-700 dark:text-lime-300 mb-6">
   Explore our exclusive travel packages designed to offer you the best experiences in Bangladesh. <br />
   Whether you're seeking thrilling adventures or relaxing retreats, we have something for every traveler. <br />
   Choose a package and embark on an extraordinary journey with us.
@@ -25,7 +25,7 @@ const PackageCard = () => {
         </div>
         <Link to={'/all-package'}>
          <div className="card-actions justify-center">
-            <button className="btn btn-primary">All Package</button>
+            <button className="btn text-white bg-orange-500 border-none hover:bg-orange-600">All Package</button>
           </div>
          </Link>
     </div>

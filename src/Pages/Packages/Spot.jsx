@@ -6,12 +6,35 @@ import Swal from 'sweetalert2';
 import { useEffect, useState } from 'react';
 import useAdmin from '../../hooks/useAdmin';
 import useTourGuide from '../../hooks/useTourGuide';
+import "animate.css";
+
 
 
 const Spot = ({spot}) => {
   const {user} = useAuth();
   const [admin] = useAdmin();
   const [tourGuide] = useTourGuide();
+  const [bounceStyle, setBounceStyle] = useState({});
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBounceStyle({
+        transform: 'rotateY(15deg)',
+        transition: 'transform 0.5s ease-in-out',
+      });
+  
+      setTimeout(() => {
+        setBounceStyle({
+          transform: 'rotateY(0deg)',
+          transition: 'transform 0.5s ease-in-out',
+        });
+      }, 600);
+    }, 2500);
+  
+    return () => clearInterval(interval);
+  }, []);
+  
+  
+
     const {primary_image,tour_type,trip_title,price,_id} = spot;
     const [wishlist, setWishlist] = useState([]);
     useEffect(() => {
@@ -100,26 +123,35 @@ if (admin || tourGuide) {
   });
     }
     return (
-        <div className="card bg-base-100  shadow-xl text-orange-600 mb-10 hover:bg-teal-200">
-          <figure>
-          <img className='relative'
+      <div  style={bounceStyle}
+        className="card bg-base-100 dark:bg-base-800 bg-gradient-to-bl from-orange-200 via-yellow-300 to-pink-200 dark:from-gray-800 dark:via-gray-900 dark:to-black shadow-xl text-yellow-800 dark:text-yellow-300 hover:bg-teal-200 dark:hover:bg-teal-600 mb-10 "
+      >
+        <figure>
+          <img
+            className="relative"
             src={primary_image}
-            alt="Shoes"/>
-          </figure>
-          <FaRegHeart onClick={handleAddToWishlist} className='btn w-[50px] top-0 -right-0 absolute bg-red-700 border-none'></FaRegHeart>
-         
-          
+            alt="Tour Package"
+          />
+        </figure>
+        <FaRegHeart
+          onClick={handleAddToWishlist}
+          className="btn w-[50px] top-0 -right-0 absolute bg-red-700 border-none hover:bg-red-500"
+        />
         <div className="card-body">
-        <h2 className="card-title">Type: {tour_type}</h2>
-          <p>Title: {trip_title}</p>
-          <p>Price: {price}</p>
-         <Link to={`/package-details/${_id}`}>
-         <div className="card-actions justify-end">
-            <button className="btn btn-primary">View Package</button>
-          </div>
-         </Link>
+          <h2 className="card-title text-rose-800 hover:text-pink-900">Type: {tour_type}</h2>
+          <p className="text-pink-800 hover:text-orange-900">Title: {trip_title}</p>
+          <p className="text-orange-800 hover:text-red-700">Price: ${price}</p>
+          <Link to={`/package-details/${_id}`}>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary text-white bg-orange-500 hover:bg-orange-600 border-none">
+                View Package
+              </button>
+            </div>
+          </Link>
         </div>
       </div>
+    
+       
     );
 };
 
