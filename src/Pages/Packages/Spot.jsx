@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 import useAdmin from '../../hooks/useAdmin';
 import useTourGuide from '../../hooks/useTourGuide';
 import "animate.css";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 
@@ -16,6 +18,10 @@ const Spot = ({spot}) => {
   const [tourGuide] = useTourGuide();
   const [bounceStyle, setBounceStyle] = useState({});
   useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false
+    })
     const interval = setInterval(() => {
       setBounceStyle({
         transform: 'rotateY(15deg)',
@@ -124,6 +130,7 @@ if (admin || tourGuide) {
     }
     return (
       <div  style={bounceStyle}
+      data-aos='fade-up'
         className="card bg-base-100 dark:bg-base-800 bg-gradient-to-bl from-orange-200 via-yellow-300 to-pink-200 dark:from-gray-800 dark:via-gray-900 dark:to-black shadow-xl text-yellow-800 dark:text-yellow-300 hover:bg-teal-200 dark:hover:bg-teal-600 mb-10 "
       >
         <figure>
@@ -131,6 +138,7 @@ if (admin || tourGuide) {
             className="relative"
             src={primary_image}
             alt="Tour Package"
+            data-aos='zoom-in'
           />
         </figure>
         <FaRegHeart
@@ -138,12 +146,12 @@ if (admin || tourGuide) {
           className="btn w-[50px] top-0 -right-0 absolute bg-red-700 border-none hover:bg-red-500"
         />
         <div className="card-body">
-          <h2 className="card-title text-rose-800 hover:text-pink-900">Type: {tour_type}</h2>
-          <p className="text-pink-800 hover:text-orange-900">Title: {trip_title}</p>
-          <p className="text-orange-800 hover:text-red-700">Price: ${price}</p>
+          <h2 className="card-title text-rose-800 hover:text-pink-900" data-aos='fade-right'>Type: {tour_type}</h2>
+          <p className="text-pink-800 hover:text-orange-900" data-aos='fade-right'>Title: {trip_title}</p>
+          <p className="text-orange-800 hover:text-red-700" data-aos='fade-right'>Price: ${price}</p>
           <Link to={`/package-details/${_id}`}>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary text-white bg-orange-500 hover:bg-orange-600 border-none">
+              <button className="btn btn-primary text-white bg-orange-500 hover:bg-orange-600 border-none" data-aos='fade-up'>
                 View Package
               </button>
             </div>

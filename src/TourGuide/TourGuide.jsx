@@ -4,12 +4,18 @@ import { Link } from "react-router-dom";
 import "animate.css";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
- 
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 const TourGuide = () => {
   const axiosPublic = useAxiosPublic();
   const [bounceStyle, setBounceStyle] = useState({});
 
   useEffect(() => {
+    Aos.init({
+     duration: 1000,
+     once: false
+    })
     const interval = setInterval(() => {
       setBounceStyle({
         transform: "rotateY(15deg)",
@@ -46,20 +52,21 @@ const TourGuide = () => {
           <div
             key={p._id}
             style={bounceStyle}
+            data-aos='fade-up'
             className="card md:w-96 dark:bg-base-800 bg-gradient-to-bl from-orange-200 via-yellow-300 to-pink-200 dark:from-gray-800 dark:via-gray-900 dark:to-black shadow-xl text-yellow-800 dark:text-yellow-300 hover:bg-teal-200 dark:hover:bg-teal-600 mb-10"
           >
             <figure>
-              <img className="relative" src={p.profilePicture} alt="Tour Guide" />
+              <img className="relative" src={p.profilePicture} alt="Tour Guide" data-aos='zoom-in'/>
             </figure>
             <div className="card-body">
-              <h2 className="card-title text-rose-800 hover:text-pink-900">Name: {p.name}</h2>
-              <p className="text-pink-800 hover:text-orange-900">Email: {p.email}</p>
-              <p className="text-orange-800 hover:text-red-700">Phone: {p.phone}</p>
-              <p className="text-yellow-800 hover:text-red-700">Address: {p.address}</p>
+              <h2 className="card-title text-rose-800 hover:text-pink-900" data-aos='fade-right'>Name: {p.name}</h2>
+              <p className="text-pink-800 hover:text-orange-900" data-aos='fade-right'>Email: {p.email}</p>
+              <p className="text-orange-800 hover:text-red-700" data-aos='fade-right'>Phone: {p.phone}</p>
+              <p className="text-yellow-800 hover:text-red-700" data-aos='fade-right'>Address: {p.address}</p>
 
               <Link to={`/tourGuide-details/${p._id}`}>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary text-white bg-orange-500 hover:bg-orange-600 border-none">
+                  <button className="btn btn-primary text-white bg-orange-500 hover:bg-orange-600 border-none" data-aos='fade-up'>
                     Details
                   </button>
                 </div>
