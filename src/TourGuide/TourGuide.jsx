@@ -2,9 +2,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "animate.css";
+import useAxiosPublic from "../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
  
 const TourGuide = () => {
-  const [tourGuide, setTourGuide] = useState([]);
+  const axiosPublic = useAxiosPublic();
   const [bounceStyle, setBounceStyle] = useState({});
 
   useEffect(() => {
@@ -25,13 +27,13 @@ const TourGuide = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    fetch("https://assignment-12-server-lac-ten.vercel.app/tourGuides")
-      .then((res) => res.json())
-      .then((data) => setTourGuide(data));
-  }, []);
-
-
+ const {data: guide = []} = useQuery({
+  queryKey: ['guide'],
+  queryFn: async () => {
+    const res = await axiosPublic.get('/tourGuides')
+    return res.data
+  }
+ })
   return (
     <div>
       <h3 className="text-center text-xl mb-6 text-lime-700 dark:text-lime-300">
@@ -40,7 +42,7 @@ const TourGuide = () => {
         Let them lead you through the beauty of Bangladesh with local insights and a personalized touch.
       </h3>
       <div className="lg:ml-8 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mx-auto lg:gap-6">
-        {tourGuide.map((p) => (
+        {guide.map((p) => (
           <div
             key={p._id}
             style={bounceStyle}

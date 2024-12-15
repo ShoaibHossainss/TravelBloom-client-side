@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import useAxiosPublic from "../src/hooks/useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 const TouristStory = () => {
    const [bounceStyle, setBounceStyle] = useState({});
-
+   const axiosPublic = useAxiosPublic()
    useEffect(() => {
+    Aos.init({
+      duration: 1000, // Animation duration in ms
+      once: false, // Whether animation should happen only once
+    });
     const interval = setInterval(() => {
       setBounceStyle({
         transform: "rotateY(15deg)",
@@ -26,8 +32,6 @@ const TouristStory = () => {
     return () => clearInterval(interval);
   }, []);
 
-
-    const axiosPublic = useAxiosPublic()
     const {data: touristStory=[],} = useQuery({
       queryKey: ['touristStory'],
       queryFn: async () => {
@@ -49,18 +53,20 @@ const TouristStory = () => {
         <Link to={`/touristStory-details/${p._id}`} key={p._id}>
           <div
             style={bounceStyle}
+             data-aos="fade-up"
              className="card dark:bg-base-800 bg-gradient-to-bl from-orange-200 via-yellow-300 to-pink-200 dark:from-gray-800 dark:via-gray-900 dark:to-black shadow-xl text-yellow-800 dark:text-yellow-300 hover:bg-teal-200 dark:hover:bg-teal-600"
           >
             <figure>
-              <img className="relative" src={p.imageUrl} alt="Tourist Story" />
+              <img className="relative" src={p.imageUrl} alt="Tourist Story"  data-aos="zoom-in" />
+              
             </figure>
             <div className="card-body">
-              <h2 className="card-title text-rose-800 hover:text-pink-900">
+              <h2 className="card-title text-rose-800 hover:text-pink-900" data-aos="fade-right">
                 Type: {p.type}
               </h2>
-              <p className="text-pink-800 hover:text-orange-900">Title: {p.title}</p>
-              <p className="text-orange-800 hover:text-red-700">Location: {p.location}</p>
-              <p className="text-yellow-800 hover:text-red-700">Experience: {p.experience}</p>
+              <p className="text-pink-800 hover:text-orange-900"  data-aos="fade-right">Title: {p.title}</p>
+              <p className="text-orange-800 hover:text-red-700" data-aos="fade-right">Location: {p.location}</p>
+              <p className="text-yellow-800 hover:text-red-700" data-aos="fade-right">Experience: {p.experience}</p>
             </div>
           </div>
         </Link>
@@ -68,7 +74,7 @@ const TouristStory = () => {
     </div>
       <Link to={'/all-touristStory'}>
       <div className="flex justify-center mx-auto mt-4">
-      <button className="btn text-white bg-orange-500 border-none hover:bg-orange-600">All Story</button>
+      <button className="btn text-white bg-orange-500 border-none hover:bg-orange-600" data-aos="fade-up">All Story</button>
       </div>
            
          </Link>

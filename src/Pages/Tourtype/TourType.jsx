@@ -8,9 +8,6 @@ import image6 from '../../assets/fotor-ai-2024121017390.jpg'
 
 
 const TourType = () => {
- 
-   
-   
     return (
         <div className="md:mt-8 mt-4 dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white">
             <h3 className="text-3xl text-center mb-2">Tour Type Section</h3>

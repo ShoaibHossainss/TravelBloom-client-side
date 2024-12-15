@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 const AdminProfile = () => {
     const {user} = useAuth()
     return (
-      <div>
+      <div className="dark:text-white">
         <Helmet>
                 <title>Admin Profile</title>
             </Helmet>
@@ -22,14 +22,14 @@ const AdminProfile = () => {
         <div className='ml-4'>
         <form className="card-body w-1/2 mt-4 mx-auto pb-10">
 <div className="items-center justify-center text-center mb-3 form-control w-full">
-<label className="input input-bordered flex justify-center items-center text-center gap-2">
+<label className="input input-bordered flex justify-center items-center text-center gap-2 dark:bg-blue-900">
 {
            user?.displayName
        }
 </label>
 </div>
 <div className="form-control w-full items-center justify-center text-center">
-<label className="input input-bordered flex justify-center items-center text-center gap-2">
+<label className="input input-bordered flex justify-center items-center text-center gap-2 dark:bg-blue-900">
 
 {
 user?.email

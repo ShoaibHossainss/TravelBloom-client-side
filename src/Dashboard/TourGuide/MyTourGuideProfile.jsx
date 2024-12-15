@@ -23,7 +23,7 @@ const MyTourGuideProfile = () => {
    <div className='ml-4'>
    <form className="card-body w-1/2 mt-4 mx-auto">
    <div className="items-center justify-center text-center mb-3 form-control w-full">
-   <label className="input input-bordered flex justify-center items-center text-center gap-2">
+   <label className="input input-bordered flex justify-center items-center text-center gap-2 dark:bg-blue-900">
    {
                    user?.displayName
                }
@@ -31,7 +31,7 @@ const MyTourGuideProfile = () => {
    </label>
    </div>
    <div className="items-center justify-center text-center mb-3 form-control w-full">
-   <label className="input input-bordered flex justify-center items-center text-center gap-2">
+   <label className="input input-bordered flex justify-center items-center text-center gap-2 dark:bg-blue-900">
      {
        user?.email
      }
@@ -42,7 +42,7 @@ const MyTourGuideProfile = () => {
    </div>
   <div className="mx-auto text-center items-center mb-4">
   <Link to={'/dashboard/Add-New-TourGuide'}>
-   <button className='btn'>Add New Tour Guide</button>
+   <button className="btn flex mx-auto mt-4 text-white bg-orange-500 border-none hover:bg-orange-600">Add New Tour Guide</button>
    </Link>
   </div>
    

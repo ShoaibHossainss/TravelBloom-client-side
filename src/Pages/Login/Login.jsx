@@ -6,7 +6,6 @@ import { LoadCanvasTemplate, loadCaptchaEnginge, validateCaptcha } from "react-s
 import Footer from "../../../Footer/Footer";
 import Navbar from "../Navbar";
 import { Helmet } from "react-helmet-async";
-import { FaGoogle } from "react-icons/fa";
 import SocialLogin from "./SocialLogin";
 
 
@@ -75,44 +74,43 @@ const Login = () => {
         <Navbar></Navbar>
          <div className="hero min-h-screen mt-4 mb-2">
         <div className=" flex-col">
-        <h2 className="text-center text-lg mb-6 mt-4 text-lime-700">
+        <h2 className="text-center text-lg mb-6 mt-4 text-lime-700 dark:text-lime-300">
   Welcome back! Log in to continue your journey. <br />
   Access your account and explore new destinations.
 </h2>
 
-          <div className="card bg-base-100  max-w-sm  shadow-2xl">
+          <div className="card bg-base-100 dark:bg-gray-800  max-w-sm  shadow-2xl">
             <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text dark:text-white">Email</span>
                 </label>
-                <input type="email" name="email" placeholder="email" className="input input-bordered bg-gray-50" required />
+                <input type="email" name="email" placeholder="email" className="input input-bordered bg-gray-50 dark:text-blue-800" required />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text dark:text-white">Password</span>
                 </label>
-                <input type="password" name="password" placeholder="password" className="input input-bordered bg-gray-50" required />
+                <input type="password" name="password" placeholder="password" className="input input-bordered bg-gray-50 dark:text-blue-800" required />
                 <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                  <a href="#" className="label-text-alt link link-hover dark:text-white">Forgot password?</a>
                 </label>
               </div>
               <div className="form-control">
                 <label className="label">
                 <LoadCanvasTemplate />
                 </label>
-                <input type="text" onBlur={handleValidate} name="captcha" placeholder="enter your captcha" className="input input-bordered bg-gray-50" required />
+                <input type="text" onBlur={handleValidate} name="captcha" placeholder="enter your captcha" className="input input-bordered bg-gray-50 dark:text-blue-800" required />
                
               </div>
               <div className="form-control mt-6">
-                <input disabled={disabled} className="btn btn-primary" type="submit" value="Login" />
+                <input disabled={disabled} className="btn btn-primary dark:bg-blue-500 dark:hover:bg-blue-400 dark:text-white" type="submit" value="Login" />
               </div>
-              
             </form>
             <div className="text-center items-center mx-auto justify-center">
             <SocialLogin></SocialLogin>
             </div>
-            <p className="text-center text-xl mb-4"><small>New here? <Link to='/register'><button className="btn btn-primary">Create Account</button></Link></small></p>
+            <p className="text-center text-xl mb-4"><small>New here? <Link to='/register'><button className="btn border-none btn-primary dark:bg-blue-500 dark:hover:bg-blue-400 dark:text-white">Create Account</button></Link></small></p>
           </div>
         </div>
       </div>

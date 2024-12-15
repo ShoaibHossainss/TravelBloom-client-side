@@ -56,7 +56,7 @@ const AddPackage = () => {
           });
     } 
     return (
-        <div>
+        <div className="dark:text-white">
           <Helmet>
                 <title>Add Package</title>
             </Helmet>
@@ -64,9 +64,9 @@ const AddPackage = () => {
         <form className="md:mx-10 pb-10" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full mb-2">
         <div className="label">
-        <span className="label-text">Category</span>
+        <span className="label-text dark:text-white">Category</span>
         </div>
-        <select defaultValue='default' {...register("category",{required: true})} className="select select-bordered w-full">
+        <select defaultValue='default' {...register("category",{required: true})} className="select select-bordered w-full dark:bg-blue-900">
         <option value='default' disabled >Select a category</option>
         <option value="Adventure">Adventure</option>
         <option value="Cultural">Cultural</option>
@@ -80,17 +80,17 @@ const AddPackage = () => {
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Tour Title</span>
+        <span className="label-text dark:text-white">Tour Title</span>
         </div>
-        <input {...register("title",{required: true})} type="text" placeholder="Enter your tour title" className="input input-bordered w-full" />
+        <input {...register("title",{required: true})} type="text" placeholder="Enter your tour title" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Primary Image</span>
+        <span className="label-text dark:text-white">Primary Image</span>
         </div>
-        <input {...register("image",{required: true})} type="text" placeholder="Enter your primary image" className="input input-bordered w-full" />
+        <input {...register("image",{required: true})} type="text" placeholder="Enter your primary image" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         </div>
@@ -98,95 +98,77 @@ const AddPackage = () => {
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Price</span>
+        <span className="label-text dark:text-white">Price</span>
         </div>
-        <input {...register("price",{required: true})} type="number" placeholder="Price" className="input input-bordered w-full" />
+        <input {...register("price",{required: true})} type="number" placeholder="Price" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">About</span>
+        <span className="label-text dark:text-white">About</span>
         </div>
-        <input {...register("about",{required: true})} type="text" placeholder="About Your Tour" className="input input-bordered w-full" />
+        <input {...register("about",{required: true})} type="text" placeholder="About Your Tour" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         </div>
         <div className="form-control w-full mb-2">
         <label>
         <div className="label">
-        <span className="label-text">Day-1 title</span>
+        <span className="label-text dark:text-white">Day-1 title</span>
         </div>
-        <input {...register("day_1_title",{required: true})} type="text" placeholder="Enter Your Day-1 Title" className="input input-bordered w-full" />
+        <input {...register("day_1_title",{required: true})} type="text" placeholder="Enter Your Day-1 Title" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <label className="form-control mb-2">
         <div className="label">
-        <span className="label-text">Day-1 description</span>
+        <span className="label-text dark:text-white">Day-1 description</span>
         </div>
-        <textarea {...register("day_1_description",{required: true})} className="textarea textarea-bordered h-24" placeholder="Enter Your Day-1 Detailed Description"></textarea>
+        <textarea {...register("day_1_description",{required: true})} className="textarea textarea-bordered h-24 dark:bg-blue-900" placeholder="Enter Your Day-1 Detailed Description"></textarea>
         </label>
         <div className="form-control w-full mb-2">
         <label>
         <div className="label">
-        <span className="label-text">Day-2 title</span>
+        <span className="label-text dark:text-white">Day-2 title</span>
         </div>
-        <input {...register("day_2_title",{required: true})} type="text" placeholder="Enter Your Day-2 Title" className="input input-bordered w-full" />
+        <input {...register("day_2_title",{required: true})} type="text" placeholder="Enter Your Day-2 Title" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <label className="form-control mb-2">
         <div className="label">
-        <span className="label-text">Day-2 description</span>
+        <span className="label-text dark:text-white">Day-2 description</span>
         </div>
-        <textarea {...register("day_2_description",{required: true})} className="textarea textarea-bordered h-24" placeholder="Enter Your Day-2 Detailed Description"></textarea>
+        <textarea {...register("day_2_description",{required: true})} className="textarea textarea-bordered h-24 dark:bg-blue-900" placeholder="Enter Your Day-2 Detailed Description"></textarea>
         </label>
         <div className="form-control w-full mb-2">
         <label>
         <div className="label">
-        <span className="label-text">Day-3 title</span>
+        <span className="label-text dark:text-white">Day-3 title</span>
         </div>
-        <input {...register("day_3_title",{required: true})} type="text" placeholder="Enter Your Day-3 Title" className="input input-bordered w-full" />
+        <input {...register("day_3_title",{required: true})} type="text" placeholder="Enter Your Day-3 Title" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <label className="form-control mb-2">
         <div className="label">
-        <span className="label-text">Day-3 description</span>
+        <span className="label-text dark:text-white">Day-3 description</span>
         </div>
-        <textarea {...register("day_3_description",{required: true})} className="textarea textarea-bordered h-24" placeholder="Enter Your Day-3 Detailed Description"></textarea>
+        <textarea {...register("day_3_description",{required: true})} className="textarea textarea-bordered h-24 dark:bg-blue-900" placeholder="Enter Your Day-3 Detailed Description"></textarea>
         </label>
         <div className='lg:flex mb-2 gap-4'>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Gallery Image-1</span>
+        <span className="label-text dark:text-white">Gallery Image-1</span>
         </div>
-        <input {...register("images1",{required: true})} type="text" placeholder="Enter your first image" className="input input-bordered w-full" />
+        <input {...register("images1",{required: true})} type="text" placeholder="Enter your first image" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Gallery Image-2</span>
+        <span className="label-text dark:text-white">Gallery Image-2</span>
         </div>
-        <input {...register("images2",{required: true})} type="text" placeholder="Enter your second image" className="input input-bordered w-full" />
-        </label>
-        </div>
-        </div>
-        <div className='lg:flex mb-2 gap-4'>
-        <div className="form-control w-full">
-        <label>
-        <div className="label">
-        <span className="label-text">Gallery Image-3</span>
-        </div>
-        <input {...register("images3",{required: true})} type="text" placeholder="Enter your third image" className="input input-bordered w-full" />
-        </label>
-        </div>
-        <div className="form-control w-full">
-        <label>
-        <div className="label">
-        <span className="label-text">Gallery Image-4</span>
-        </div>
-        <input {...register("images4",{required: true})} type="text" placeholder="Enter your fourth image" className="input input-bordered w-full" />
+        <input {...register("images2",{required: true})} type="text" placeholder="Enter your second image" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         </div>
@@ -194,21 +176,39 @@ const AddPackage = () => {
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Gallery Image-5</span>
+        <span className="label-text dark:text-white">Gallery Image-3</span>
         </div>
-        <input {...register("images5",{required: true})} type="text" placeholder="Enter your fifth image" className="input input-bordered w-full" />
+        <input {...register("images3",{required: true})} type="text" placeholder="Enter your third image" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Gallery Image-6</span>
+        <span className="label-text dark:text-white">Gallery Image-4</span>
         </div>
-        <input {...register("images6",{required: true})} type="text" placeholder="Enter your sixth image" className="input input-bordered w-full" />
+        <input {...register("images4",{required: true})} type="text" placeholder="Enter your fourth image" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         </div>
-        <button className="btn flex mx-auto mt-4">Add Package</button>
+        <div className='lg:flex mb-2 gap-4'>
+        <div className="form-control w-full">
+        <label>
+        <div className="label">
+        <span className="label-text dark:text-white">Gallery Image-5</span>
+        </div>
+        <input {...register("images5",{required: true})} type="text" placeholder="Enter your fifth image" className="input input-bordered w-full dark:bg-blue-900" />
+        </label>
+        </div>
+        <div className="form-control w-full">
+        <label>
+        <div className="label">
+        <span className="label-text dark:text-white">Gallery Image-6</span>
+        </div>
+        <input {...register("images6",{required: true})} type="text" placeholder="Enter your sixth image" className="input input-bordered w-full dark:bg-blue-900" />
+        </label>
+        </div>
+        </div>
+        <button className="btn flex mx-auto mt-4 text-white bg-orange-500 border-none hover:bg-orange-600">Add Package</button>
         </form>
         <Footer></Footer>
         </div>

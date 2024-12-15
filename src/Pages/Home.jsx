@@ -20,8 +20,6 @@ const Home = () => {
            <TourType></TourType>
            <TouristStory></TouristStory>
            <Footer></Footer>
-
-           
         </div>
     );
 };

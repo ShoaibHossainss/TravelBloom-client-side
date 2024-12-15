@@ -304,7 +304,7 @@ const PackageDetails = () => {
         {isModalOpen && (
           <div className="modal modal-open">
             <div className="modal-box">
-              <h3 className="text-lg font-bold">Your Booking Was Successful</h3>
+              <h3 className="text-lg font-bold dark:text-blue-800">Your Booking Was Successful</h3>
               <div className="modal-action">
                 <Link to="/dashboard/myBookings">
                   <button className="btn text-white bg-orange-500 border-none hover:bg-orange-600">My Bookings</button>

@@ -59,14 +59,14 @@ const MyAssignedTour = () => {
 
     
     return (
-        <div>
+        <div className='dark:text-white'>
            <Helmet>
                 <title>My Assigned Tour</title>
             </Helmet>
             <div>
             <table className="table table-zebra w-full mb-4">
             <thead>
-      <tr>
+      <tr className='dark:text-white'>
         <th></th>
         <th>Package Name</th>
         <th>Tourist Name</th>
@@ -89,13 +89,13 @@ const MyAssignedTour = () => {
           <div>
     <button
        onClick={() => handleAccept(tourist._id, () => {})}
-   className="btn btn-xl bg-orange-500"
+   className="btn btn-xl bg-orange-500 border-none"
     >
      Accept
    </button>
     <button
       onClick={() => handleReject(tourist._id, () => {})}
-      className="btn btn-xl bg-red-500"
+      className="btn btn-xl bg-red-500 border-none"
        >
         Reject
         </button>

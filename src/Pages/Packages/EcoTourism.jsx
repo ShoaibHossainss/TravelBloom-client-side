@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import Footer from "../../../Footer/Footer";
 import { Helmet } from "react-helmet-async";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import { useQuery } from "@tanstack/react-query";
 
 
 const EcoTourism = () => {
-    const [items,setItem] = useState([]);
+    const axiosPublic = useAxiosPublic()
     const [bounceStyle, setBounceStyle] = useState({});
 
     useEffect(() => {
@@ -27,17 +29,13 @@ const EcoTourism = () => {
      return () => clearInterval(interval);
    }, []);
  
-    
-    useEffect(()=>{
-        fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot')
-        .then(res=>res.json())
-        .then(data=>{
-            setItem(data.filter(item=>item.tour_type==='Eco-tourism'))
-        
-   
-        })
-    },[])
-    console.log(items)
+    const {data: spot = []} = useQuery({
+      queryKey: ['spot'],
+      queryFn: async () => {
+       const res = await axiosPublic.get('/touristSpot')
+       return res.data.filter(spot=>spot.tour_type==='Eco-tourism')
+      }
+    })
     return (
         <div>
           <Helmet>
@@ -46,7 +44,7 @@ const EcoTourism = () => {
           <Navbar></Navbar>
           <div className="grid md:grid-cols-3 grid-cols-1 gap-4 mt-4 mb-4 mx-auto justify-center">
           {
-            items.map(p=>
+            spot.map(p=>
                 <div key={p._id} style={bounceStyle} className="card bg-base-100 bg-gradient-to-bl from-orange-200 via-yellow-300 to-pink-200 shadow-xl text-yellow-800 hover:bg-teal-200 mb-6 dark:bg-gradient-to-bl dark:from-gray-800 dark:via-gray-900 dark:to-black dark:text-yellow-300">
                 <figure>
                 <img className='relative'

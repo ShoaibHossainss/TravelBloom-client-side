@@ -133,7 +133,7 @@ const handleMenuOpen = () => {
     }
     const tourGuideRequests = users.filter((user) => user.role === "requested");
     return (
-        <div className="w-full">
+        <div className="w-full dark:text-white">
             <Helmet>
                 <title>Manage User</title>
             </Helmet>
@@ -164,7 +164,7 @@ const handleMenuOpen = () => {
                 <div>
                  <table className="table table-zebra w-full">
                 <thead>
-                 <tr>
+                 <tr className="dark:text-white">
                   <th>#</th>
                 <th>Name</th>
                 <th>Email</th>
@@ -180,7 +180,7 @@ const handleMenuOpen = () => {
               <td>
                <button
                 onClick={() => handleApproveRequest(user)}
-                className="btn btn-xl bg-green-500 text-white"
+                className="btn btn-xl bg-green-500 text-white border-none"
                 >
                 Approve
                 </button>
@@ -196,7 +196,7 @@ const handleMenuOpen = () => {
   <table className="table table-zebra w-full mb-4">
     {/* head */}
     <thead>
-      <tr>
+      <tr className="dark:text-white">
         <th></th>
         <th>Name</th>
         <th>Email</th>
@@ -214,20 +214,20 @@ const handleMenuOpen = () => {
             <td>{user.email}</td>
             <td>
         {
-            user?.role === 'admin' ? 'Admin' : <button onClick={()=>handleMakeAdmin(user)} className="btn btn-xl bg-orange-500" disabled={user?.role === 'tourGuide'}>   
+            user?.role === 'admin' ? 'Admin' : <button onClick={()=>handleMakeAdmin(user)} className="btn btn-xl bg-orange-500 border-none" disabled={user?.role === 'tourGuide'}>   
             Admin
         </button>
         }
             </td>
             <td>
         {
-            user?.role === 'tourGuide' ? 'TourGuide' : <button onClick={()=>handleMakeTourGuide(user)} className="btn btn-xl bg-orange-500" disabled={user?.role === 'admin'}>
+            user?.role === 'tourGuide' ? 'TourGuide' : <button onClick={()=>handleMakeTourGuide(user)} className="btn btn-xl bg-orange-500 border-none" disabled={user?.role === 'admin'}>
             TourGuide
         </button>
         }
             </td>
             <td>
-<button onClick={()=>handleDeleteUser(user)} className="btn btn-ghost btn-xl">
+<button onClick={()=>handleDeleteUser(user)} className="btn btn-ghost btn-xl border-none">
                   <FaTrash className="text-red-600"></FaTrash>
                 </button>
             </td>

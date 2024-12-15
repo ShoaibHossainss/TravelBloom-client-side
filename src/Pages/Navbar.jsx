@@ -129,20 +129,20 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <img className="w-[40px]" src={logo} alt="" />
+        <img className="md:w-[40px] w-[30px]" src={logo} alt="" />
         <Link to={"/"}>
-          <button className="btn btn-ghost text-xl text-green-500 dark:text-yellow-400">TravelBloom</button>
+          <button className="btn btn-ghost text-xl text-green-500 dark:text-yellow-400 -translate-x-3">TravelBloom</button>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden md:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
         <button
           onClick={toggleDarkMode}
-          className="p-2 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white rounded"
+          className="p-2 md:mr-4 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white rounded"
         >
-          {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
         </button>
         {user ? (
           <>

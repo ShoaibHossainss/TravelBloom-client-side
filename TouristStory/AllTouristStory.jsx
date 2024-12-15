@@ -13,8 +13,7 @@ const AllTouristStory = () => {
   useEffect(() => {
     setAllStory(touristStory);
   }, [touristStory]);
-
-  // Bounce animation for each card
+  
   const [bounceStyle, setBounceStyle] = useState({});
   useEffect(() => {
     const interval = setInterval(() => {

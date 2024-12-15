@@ -2,8 +2,6 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 
 import {FacebookIcon,FacebookShareButton,} from "react-share";
 import useAuth from "../src/hooks/useAuth";
-import useAdmin from "../src/hooks/useAdmin";
-import useTourGuide from "../src/hooks/useTourGuide";
 import Navbar from "../src/Pages/Navbar";
 import Footer from "../Footer/Footer";
 import { Helmet } from "react-helmet-async";

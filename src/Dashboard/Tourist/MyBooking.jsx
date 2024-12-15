@@ -68,7 +68,7 @@ const MyBooking = () => {
             <div>
             <table className="table table-zebra w-full">
             <thead>
-      <tr>
+      <tr className='dark:text-white'>
         <th></th>
         <th>Package Name</th>
         <th>Guide Name</th>
@@ -89,14 +89,14 @@ const MyBooking = () => {
         <td>
             {
             tourist.status === 'In Review' && (
-                <button onClick={()=>handleCancel(tourist._id)} className="btn btn-xl bg-orange-500">
+                <button onClick={()=>handleCancel(tourist._id)} className="btn btn-xl bg-orange-500 border-none">
                     Cancel
                 </button>
             )
             }
             {
             tourist.status === 'Accepted' && (
-                <button onClick={()=>handlePay(tourist._id)} className="btn btn-xl bg-orange-500">
+                <button onClick={()=>handlePay(tourist._id)} className="btn btn-xl bg-orange-500 border-none">
                     Pay Now
                 </button>
             )

@@ -60,14 +60,14 @@ const MyWishlist = () => {
     const totalPages = Math.ceil(wishlist.length / itemsPerPage);
 
     return (
-        <div>
+        <div className='dark:text-white'>
           <Helmet>
                 <title>My Wishlist</title>
             </Helmet>
           <div>
           <table className="table table-zebra w-full mb-4">
             <thead>
-      <tr>
+      <tr className='dark:text-white'>
         <th></th>
         <th>Type</th>
         <th>Title</th>

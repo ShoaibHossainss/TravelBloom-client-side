@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 const MyProfile = () => {
     const {user} = useAuth()
    return(
-   <div>
+   <div className="dark:text-white">
     <Helmet>
                 <title>Tourist Profile</title>
             </Helmet>
@@ -24,8 +24,8 @@ const MyProfile = () => {
 </div>
 <div className="ml-4">
 <form className="card-body w-1/2 mt-4 mx-auto">
-<div className="items-center justify-center text-center mb-3 form-control w-full">
-<label className="input input-bordered flex justify-center items-center text-center gap-2">
+<div className="items-center justify-center text-center mb-3 form-control w-full ">
+<label className="input input-bordered flex justify-center items-center text-center gap-2 dark:bg-blue-900">
 {
                 user?.displayName
             }
@@ -33,7 +33,7 @@ const MyProfile = () => {
 </label>
 </div>
 <div className="items-center justify-center text-center mb-3 form-control w-full">
-<label className="input input-bordered flex justify-center items-center text-center gap-2">
+<label className="input input-bordered flex justify-center items-center text-center gap-2 dark:bg-blue-900">
   {
     user?.email
   }
@@ -44,7 +44,7 @@ const MyProfile = () => {
 </div>
 <div className="mx-auto text-center items-center mb-4">
   <Link to={'/dashboard/add-New-Story'}>
-  <button className="btn btn-primary">Add a story</button>
+  <button className="btn flex mx-auto mt-4 text-white bg-orange-500 border-none hover:bg-orange-600">Add a story</button>
   </Link>
 </div>
 <Footer></Footer>

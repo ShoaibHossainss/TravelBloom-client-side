@@ -13,16 +13,15 @@ const TourGuideDetails = () => {
   const guide = tourGuide.find((guide) => guide._id === id);
   console.log(guide);
 
-  const { user, login } = useContext(AuthContext); // Access auth context
+  const { user, login } = useContext(AuthContext); 
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!user) {
-      login(); // Trigger login if user is not authenticated
+      login(); 
     } else {
-      // Handle review submission, e.g., save to a database
       console.log('Review submitted:', { rating, comment });
       setRating(0);
       setComment('');

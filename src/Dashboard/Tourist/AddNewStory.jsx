@@ -54,7 +54,7 @@ const AddNewStory = () => {
           });
     }
     return (
-        <div>
+        <div className="dark:text-white">
           <Helmet>
                 <title>Add Story</title>
             </Helmet>
@@ -64,18 +64,18 @@ const AddNewStory = () => {
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">
+        <span className="label-text dark:text-white">
         Title</span>
         </div>
-        <input {...register("title",{required: true})} type="text" placeholder="Enter your tour title" className="input input-bordered w-full" />
+        <input {...register("title",{required: true})} type="text" placeholder="Enter your tour title" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Location</span>
+        <span className="label-text dark:text-white">Location</span>
         </div>
-        <input {...register("location",{required: true})} type="text" placeholder="Enter your tour location" className="input input-bordered w-full" />
+        <input {...register("location",{required: true})} type="text" placeholder="Enter your tour location" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         </div>
@@ -83,17 +83,17 @@ const AddNewStory = () => {
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">
+        <span className="label-text dark:text-white">
         Experience</span>
         </div>
-        <input {...register("experience",{required: true})} type="text" placeholder="Enter your tour experience" className="input input-bordered w-full" />
+        <input {...register("experience",{required: true})} type="text" placeholder="Enter your tour experience" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <div className="label">
-        <span className="label-text">Category</span>
+        <span className="label-text dark:text-white">Category</span>
         </div>
-        <select defaultValue='default' {...register("type",{required: true})} className="select select-bordered w-full">
+        <select defaultValue='default' {...register("type",{required: true})} className="select select-bordered w-full dark:bg-blue-900">
         <option value='default' disabled >Select a category</option>
         <option value="Adventure">Adventure</option>
         <option value="Cultural">Cultural</option>
@@ -109,18 +109,18 @@ const AddNewStory = () => {
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">
+        <span className="label-text dark:text-white">
         Highlights</span>
         </div>
-        <input {...register("highlights1",{required: true})} type="text" placeholder="Enter your tour highlights" className="input input-bordered w-full" />
+        <input {...register("highlights1",{required: true})} type="text" placeholder="Enter your tour highlights" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">Highlights 2</span>
+        <span className="label-text dark:text-white">Highlights 2</span>
         </div>
-        <input {...register("highlights2",{required: true})} type="text" placeholder="Enter your tour highlights" className="input input-bordered w-full" />
+        <input {...register("highlights2",{required: true})} type="text" placeholder="Enter your tour highlights" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         </div>
@@ -128,25 +128,25 @@ const AddNewStory = () => {
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">
+        <span className="label-text dark:text-white">
         Highlights 3</span>
         </div>
-        <input {...register("highlights3",{required: true})} type="text" placeholder="Enter your tour highlights" className="input input-bordered w-full" />
+        <input {...register("highlights3",{required: true})} type="text" placeholder="Enter your tour highlights" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         <div className="form-control w-full">
         <label>
         <div className="label">
-        <span className="label-text">imageUrl</span>
+        <span className="label-text dark:text-white">imageUrl</span>
         </div>
-        <input {...register("imageUrl",{required: true})} type="text" placeholder="Enter your photo" className="input input-bordered w-full" />
+        <input {...register("imageUrl",{required: true})} type="text" placeholder="Enter your photo" className="input input-bordered w-full dark:bg-blue-900" />
         </label>
         </div>
         </div>
         <div className="form-control w-full">
           <label>
             <div className="label">
-              <span className="label-text">Date</span>
+              <span className="label-text dark:text-white">Date</span>
             </div>
             <Controller
               name="dateVisited"
@@ -161,7 +161,7 @@ const AddNewStory = () => {
                     const formattedDate = date ? date.toISOString().split("T")[0] : null;
                     onChange(formattedDate); // Pass formatted date to React Hook Form
                   }}
-                  className="input input-bordered w-full"
+                  className="input input-bordered w-full dark:bg-blue-900"
                   dateFormat="yyyy-MM-dd" // Display the correct format in the input
                   placeholderText="YYYY-MM-DD"
                 />
@@ -171,7 +171,7 @@ const AddNewStory = () => {
         </div>
 
 
-<button className="btn flex mx-auto mt-4">Add New Story</button>
+<button className="btn flex mx-auto mt-4 text-white bg-orange-500 border-none hover:bg-orange-600">Add New Story</button>
             </form>
             
         </div>

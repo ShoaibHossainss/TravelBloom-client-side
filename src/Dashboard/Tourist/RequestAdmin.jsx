@@ -50,18 +50,20 @@ const RequestAdmin = () => {
     };
 console.log(isRequested)
     return (
-        <div className="mb-4">
+        <div className="mb-4 dark:text-white">
             <Helmet>
                 <title>Request Admin</title>
             </Helmet>
         <h3>Request to Become a Tour Guide</h3>
         <button
-            onClick={handleRequest}
-            disabled={isRequested}
-            className={`btn btn-xl ${isRequested ? 'bg-gray-400' : 'bg-blue-500 text-white'}`}
-        >
-            {isRequested ? 'Requested' : 'Request'}
-        </button>
+  onClick={handleRequest}
+  disabled={isRequested}
+  className={`btn btn-xl ${isRequested 
+    ? 'bg-gray-400 dark:bg-gray-600 dark:text-white cursor-not-allowed' 
+    : 'bg-blue-500 dark:bg-blue-800 dark:text-white hover:bg-blue-600 dark:hover:bg-blue-700'}`}
+>
+  {isRequested ? 'Requested' : 'Request'}
+</button>
         <Footer></Footer>
     </div>
     );

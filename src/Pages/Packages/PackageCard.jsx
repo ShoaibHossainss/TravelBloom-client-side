@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
 import Spot from "./Spot";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
 
 const PackageCard = () => {
-    const [spots,setSpots] = useState([]);
-    useEffect(()=>{
-        fetch('https://assignment-12-server-lac-ten.vercel.app/touristSpot')
-        .then(res=>res.json())
-        .then(data=>setSpots(data))
-    },[])
+    const axiosPublic = useAxiosPublic()
+    const {data: spots = []} = useQuery({
+        queryKey: ['spot'],
+        queryFn: async () => {
+            const res = await axiosPublic('/touristSpot')
+            return res.data; 
+        }
+    })
     return (
         <div>
             <h3 className="text-center text-xl text-lime-700 dark:text-lime-300 mb-6">
