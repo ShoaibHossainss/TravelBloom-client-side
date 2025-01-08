@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-import { FaTrash, FaUsers } from "react-icons/fa";
+import { FaTrash,} from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
@@ -17,8 +17,8 @@ const ManageUser = () => {
       queryFn: async () => {
           const res = await axiosSecure.get('/users',{
             headers: {
-                Authorization: `Bearer ${localStorage.getItem('access-token')}`
-              }             
+                Authorization: `Bearer ${'access-token'}`
+              }
           });
           return res.data;
       } 
