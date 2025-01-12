@@ -9,7 +9,7 @@ import { Helmet } from "react-helmet-async";
 const MyProfile = () => {
     const {user} = useAuth()
    return(
-   <div className="dark:text-white">
+   <div className="dark:text-white mt-16">
     <Helmet>
                 <title>Tourist Profile</title>
             </Helmet>

@@ -133,7 +133,7 @@ const handleMenuOpen = () => {
     }
     const tourGuideRequests = users.filter((user) => user.role === "requested");
     return (
-        <div className="w-full dark:text-white">
+        <div className="w-full dark:text-white mt-16">
             <Helmet>
                 <title>Manage User</title>
             </Helmet>

@@ -7,7 +7,7 @@ import TourGuide from '../TourGuide/TourGuide';
 const Tourism = () => {
     return (
       <div className='md:mt-10 mt-4 dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white'>
-        <h3 className="text-3xl text-center mb-2">Tourism and Travel Guide Section</h3>
+        <h3 className="text-3xl text-center mb-2">Discover Bangladesh Your Ultimate Travel Guide</h3>
       <Tabs>
 <TabList>
 <Tab>Overview</Tab>

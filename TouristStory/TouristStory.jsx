@@ -41,7 +41,7 @@ const TouristStory = () => {
     })
     return (
         <div className="dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white">
-          <h1 className="text-3xl text-center mb-2">Tourist Story Section</h1>
+          <h1 className="text-3xl text-center mb-2">Traveler Stories</h1>
           <h3 className="text-center text-xl mb-6 text-lime-700 dark:text-lime-300">
   Every journey has a story, and every story deserves to be shared. <br />
   In this section, explore firsthand experiences of travelers who have ventured into the heart of Bangladesh. <br />

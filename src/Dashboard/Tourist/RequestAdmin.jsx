@@ -50,7 +50,7 @@ const RequestAdmin = () => {
     };
 console.log(isRequested)
     return (
-        <div className="mb-4 dark:text-white">
+        <div className="mb-4 mt-16 dark:text-white">
             <Helmet>
                 <title>Request Admin</title>
             </Helmet>

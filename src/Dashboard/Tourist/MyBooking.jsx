@@ -66,7 +66,7 @@ const MyBooking = () => {
                 <title>My Booking</title>
             </Helmet>
             <div>
-            <table className="table table-zebra w-full">
+            <table className="table table-zebra w-full mt-16">
             <thead>
       <tr className='dark:text-white'>
         <th></th>

@@ -59,7 +59,7 @@ const MyAssignedTour = () => {
 
     
     return (
-        <div className='dark:text-white'>
+        <div className='dark:text-white mt-16'>
            <Helmet>
                 <title>My Assigned Tour</title>
             </Helmet>

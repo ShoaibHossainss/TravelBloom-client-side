@@ -117,7 +117,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-gradient-to-r from-teal-100 via-sky-50 to-lime-50 mx-auto dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white">
+    <div className="navbar sticky md:static top-0 z-50 bg-gradient-to-r from-teal-100 via-sky-50 to-lime-50 mx-auto dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

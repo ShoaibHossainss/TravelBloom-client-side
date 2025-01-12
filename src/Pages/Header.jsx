@@ -12,8 +12,8 @@ import image6 from '../assets/fotor-ai-2024082918179.jpg';
 
 const Header = () => {
   return (
-    <div className="dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white p-0 m-0">
-      <h1 className="text-3xl text-center mb-2 mt-4">Banner Section</h1>
+    <div className="md:mt-6 mt-4 dark:bg-gradient-to-r dark:from-gray-800 dark:via-gray-600 dark:to-gray-500 dark:text-white p-0 m-0">
+       <h3 className="text-3xl text-center mb-2">Explore Bangladesh Through Stunning Visuals</h3>
       <h3 className="text-center text-xl mb-6 text-lime-700 dark:text-lime-300">
         Experience the beauty and diversity of Bangladesh through a captivating visual journey.<br />
         Our header section showcases a stunning collection of images, from serene landscapes and bustling cityscapes<br />

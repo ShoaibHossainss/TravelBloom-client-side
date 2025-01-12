@@ -53,10 +53,16 @@ import useAdmin from "../hooks/useAdmin";
 
 import useTourGuide from "../hooks/useTourGuide";
 import useAuth from "../hooks/useAuth";
+import { useState } from "react";
 
 // import useUser from "../hooks/useUser";
 
 const Dashboard = () => {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+      setIsSidebarOpen(!isSidebarOpen);
+    };
     // const isAdmin = useAdmin();
     // const isTourGuide = useTourGuide()
     // const {user} = useAuth()
@@ -70,10 +76,20 @@ const Dashboard = () => {
     if (isAdminLoading || isTourGuideLoading || userLoading) {
         return <div>Loading...</div>;
     }
+   
     return (
+        
         <div className="flex">
-            <div className="w-65 min-h-full bg-teal-800 text-white">
-                <ul className="menu p-4">
+              <button
+        onClick={toggleSidebar}
+        className="lg:hidden fixed top-4 left-4 z-50 bg-red-800 text-white p-2 rounded-md shadow"
+      >
+        {isSidebarOpen ? "✖" : "☰"}
+      </button>
+            <div className={`fixed lg:static ${
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+        } w-64 min-h-screen bg-teal-800 text-white transition-transform duration-300 lg:translate-x-0 z-40`}>
+                <ul className="menu p-4 mt-12">
                     {isAdmin ? 
                         <>
                             <li><NavLink to='/dashboard/adminProfile'>
