@@ -35,8 +35,13 @@ Welcome to TravelBloom, a website dedicated to showcasing the beautiful destinat
 
 Feel free to explore our website, book your next adventure, and enjoy an unforgettable journey through the beautiful land of Bangladesh! 🌏
 
+<<<<<<< HEAD
 ![Website Screenshot](./src/assets/localhost_5173_%20(4).png)
 
+=======
+![Website Screenshot 1](https://i.ibb.co/ThVY5VG/localhost-5173-4.png)
+![Website Screenshot 2](https://i.ibb.co/X2b2jCs/localhost-5173-5.png)
+>>>>>>> 0668f8d38cf5ad6b60365c85d60993d9e669977d
 
 
 
