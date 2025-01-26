@@ -31,6 +31,10 @@ import AddNewStory from "../Dashboard/Tourist/AddNewStory";
 import AdminProfile from "../Dashboard/Admin/AdminProfile";
 import AdminPrivateRoute from "./AdminPrivateRoute";
 import TouristPrivateRoute from "./TouristPrivateRoute";
+import Blogs from "../Pages/Blogs";
+import About from "../Pages/About";
+import Contact from "../Pages/Contact";
+import Community from "../Pages/Community";
 
 
 
@@ -75,6 +79,22 @@ import TouristPrivateRoute from "./TouristPrivateRoute";
         {
             path: '/register',
             element: <Register></Register>
+        },
+        {
+            path: '/community',
+            element: <Community></Community>
+        },
+        {
+            path: '/blogs',
+            element: <Blogs></Blogs>
+        },
+        {
+            path: '/about',
+            element: <About></About>
+        },
+        {
+            path: '/contact',
+            element: <Contact></Contact>
         },
         {
             path: '/adventure',

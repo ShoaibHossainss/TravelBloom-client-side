@@ -12,23 +12,23 @@ const axiosSecure = axios.create(
 )
 
 const useAxiosSecure = () => {
-    const {logOut} = useAuth()
-    const navigate = useNavigate()
-    useEffect(()=>{
-        axiosSecure.interceptors.response.use(res=>{
-            return res
-        }, error=>{
-            console.log('error',error.response)
-            if(error.response.status === 401 || error.response.status === 403){
-                console.log('logout this user')
-                logOut()
-                .then(()=>{
-                    navigate('/login')
-                })
-                .catch(error=>console.log(error))
-            }
-        })
-    },[logOut,navigate])
+    // const {logOut} = useAuth()
+    // const navigate = useNavigate()
+    // useEffect(()=>{
+    //     axiosSecure.interceptors.response.use(res=>{
+    //         return res
+    //     }, error=>{
+    //         console.log('error',error.response)
+    //         if(error.response.status === 401 || error.response.status === 403){
+    //             console.log('logout this user')
+    //             logOut()
+    //             .then(()=>{
+    //                 navigate('/login')
+    //             })
+    //             .catch(error=>console.log(error))
+    //         }
+    //     })
+    // },[logOut,navigate])
     return axiosSecure
 };
 

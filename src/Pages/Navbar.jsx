@@ -33,7 +33,7 @@ const Navbar = () => {
               ? "bg-black text-[#ffcd00] rounded-md font-sans text-lg"
               : "font-sans text-lg text-green-500"
           }
-          to="/assignments"
+          to="/community"
         >
           Community
         </NavLink>
@@ -45,7 +45,7 @@ const Navbar = () => {
               ? "bg-black text-[#ffcd00] rounded-md font-sans text-lg"
               : "font-sans text-lg text-green-500"
           }
-          to="/assignments"
+          to="/blogs"
         >
           Blogs
         </NavLink>
@@ -57,7 +57,7 @@ const Navbar = () => {
               ? "bg-black text-[#ffcd00] rounded-md font-sans text-lg"
               : "font-sans text-lg text-green-500"
           }
-          to="/assignments"
+          to="/about"
         >
           About Us
         </NavLink>
@@ -69,7 +69,7 @@ const Navbar = () => {
               ? "bg-black text-[#ffcd00] rounded-md font-sans text-lg"
               : "font-sans text-lg text-green-500"
           }
-          to="/assignments"
+          to="/contact"
         >
           Contact Us
         </NavLink>
